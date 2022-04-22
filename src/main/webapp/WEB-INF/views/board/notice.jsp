@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>공지사항zzzzzz123123zzzzz</h1>ㅇㅇㅇ
+	<h1>공지사항zzzzzz123123abcdef<h1>
 </body>
 </html>
