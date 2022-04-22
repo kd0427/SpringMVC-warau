@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>자랑하기게시판</h1>
+	<h1>자랑하기게시판dksldkml</h1>
 </body>
 </html>
