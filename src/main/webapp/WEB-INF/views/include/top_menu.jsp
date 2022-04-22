@@ -68,7 +68,7 @@
 				<ul class="clear">
 					<li><a href="#">PENS</a>
 						<ul>
-							<li><a href="${root }board/boast">자랑하기</a></li>
+							<li><a href="${root }board/petro">자랑하기</a></li>
 							<li><a href="${root }board/share">나눠요</a></li>
 							<li><a href="${root }board/info">정보주세요</a></li>
 							<li><a href="${root }board/adopt" class="last">분양</a></li>

@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/board")
 public class BoardController {
 
-	@GetMapping("/boast")
-	public String boast() {
+	@GetMapping("/petro")
+	public String petro() {
 		
-		return "board/boast";
+		return "board/petro";
 	}
 	
 	@GetMapping("/share")
