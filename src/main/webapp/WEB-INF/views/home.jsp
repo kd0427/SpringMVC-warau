@@ -50,7 +50,7 @@
 
 	<!--와라우 소개글-->
 	<section class="warauintro inner scroll-spy">
-		<div class="top back-to-position to-left">Warau 2022</div>
+		<div class="top back-to-position to-left">Warau 20222</div>
 		<h2 class="back-to-position to-right">
 			더 행복한 내일을 위해 <br /> 새로운 가족을 만날 수 있는 곳<br /> 집사들의 모든것을 나눌 수 있는 곳<br />
 
