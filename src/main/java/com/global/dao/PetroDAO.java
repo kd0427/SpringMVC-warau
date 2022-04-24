@@ -14,6 +14,8 @@ public class PetroDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 	
+	
+	//게시글 목록 가져오기 
 	public List<PetroVO> getPetroList() {
 		
 		return sqlSessionTemplate.selectList("petro.getPetroList");

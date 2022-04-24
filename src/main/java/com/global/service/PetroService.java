@@ -15,6 +15,7 @@ public class PetroService {
 	private PetroDAO petroDAO;
 	
 	
+	//게시판 목록 가져오기
 	public List<PetroVO> getPetroList() {
 		
 		return petroDAO.getPetroList();
