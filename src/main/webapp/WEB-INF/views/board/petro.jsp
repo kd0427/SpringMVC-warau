@@ -21,7 +21,7 @@
 	<div class="container" style="margin-top: 100px">
 		<div class="card shadow">
 			<div class="card-body">
-				<h4 class="card-title">PETRODUCE</h4>
+				<h4 class="card-title">PETRODUCE111</h4>
 				<table class="table table-hover" id='board_list'>
 					<thead>
 						<tr>
@@ -32,76 +32,19 @@
 						</tr>
 					</thead>
 					<tbody>
+						<c:forEach var="p" items="${petroContentList }" >
+						
 						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='${root }board/read'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
+							<td class="text-center d-none d-md-table-cell">${p.petro_idx }</td>
+							<td><a href='${root }board/read'>${p.petro_title }</a></td>
+							<td class="text-center d-none d-md-table-cell">${p.petro_writer }</td>
+							<td class="text-center d-none d-md-table-cell">${p.petro_regdate }</td>
 
 						</tr>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='board_read.html'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
 
-						</tr>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='board_read.html'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
-
-						</tr>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='board_read.html'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
-
-						</tr>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='board_read.html'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
-
-						</tr>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='board_read.html'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
-
-						</tr>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='board_read.html'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
-
-						</tr>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='board_read.html'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
-
-						</tr>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='board_read.html'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
-
-						</tr>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">10</td>
-							<td><a href='board_read.html'>글 제목 입니다</a></td>
-							<td class="text-center d-none d-md-table-cell">홍길동</td>
-							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
-
-						</tr>
+						</c:forEach>
+					
+						
 					</tbody>
 				</table>
 
