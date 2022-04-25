@@ -19,7 +19,7 @@
 	<div class="container" style="margin-top: 100px">
 		<div class="card shadow">
 			<div class="card-body">
-				<h4 class="card-title">나눔게시판입니다.11</h4>
+				<h4 class="card-title">나눔게시판입니다.1111</h4>
 				<table class="table table-hover" id='board_list'>
 					<thead>
 						<tr>
