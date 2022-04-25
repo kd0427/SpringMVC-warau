@@ -87,13 +87,26 @@
 					<li><a href="#">COMPANY</a></li>
 				</ul>
 			</div>
-			<div class="sub">
-				<ul>
-					<li><a href="#">LOGIN</a></li>
-					<li>|</li>
-					<li><a href="#">JOIN</a></li>
-				</ul>
-			</div>
+			<c:choose>
+					<c:when test="${loginUserVO.userLogin == true }">
+						<div class="sub">
+							<ul>
+								<li><a href="${root }user/logout">LOGOUT</a></li>
+								<li>|</li>
+								<li><a href="${root }user/modify">MYPAGE</a></li>
+							</ul>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="sub">
+							<ul>
+								<li><a href="${root }user/login">LOGIN</a></li>
+								<li>|</li>
+								<li><a href="${root }user/join">JOIN</a></li>
+							</ul>
+						</div>
+					</c:otherwise>
+				</c:choose>
 		</nav>
 	</header>
 

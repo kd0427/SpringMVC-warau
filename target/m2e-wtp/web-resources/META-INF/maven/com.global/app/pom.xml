@@ -146,6 +146,14 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>5.2.3.RELEASE</version>
 		</dependency>
+		
+		<!-- 어노테이션 -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <version>1.3.2</version>
+		</dependency>
+
 
 		<!-- 아파치 dbcp -->
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
