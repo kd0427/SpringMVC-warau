@@ -65,6 +65,7 @@ public class PetroController {
 		PetroVO petroReadVO = petroService.petroWriteInfo(petro_idx);
 		model.addAttribute("petroReadVO", petroReadVO);
 		System.out.println("되냐");
+		
 		return "board/petro/read";
 	}
 	
