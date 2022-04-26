@@ -12,6 +12,7 @@ public class AdoptVO {
 	private String adopt_img;
 	private String adopt_writer;
 	
+	//저장되는 파일
 	private MultipartFile upload_img;
 
 	public int getAdopt_idx() {

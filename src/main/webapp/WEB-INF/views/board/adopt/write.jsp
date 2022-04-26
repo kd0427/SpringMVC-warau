@@ -24,20 +24,20 @@
 					<div class="card-body">
 
 						<form:form action="${root }board/write_pro" method="post" modelAttribute="writeAdoptVO" enctype="multipart/form-data">
-							<form:hidden path="content_board_idx"/>
+							<form:hidden path="adopt_idx"/>
 							<div class="form-group">
-								<form:label path="content_subject">제목</form:label>
-								<form:input path="content_subject" class="form-control"/>
-								<form:errors path="content_subject" style='color:red'/>
+								<form:label path="adopt_title">제목</form:label>
+								<form:input path="adopt_title" class="form-control"/>
+								<form:errors path="adopt_title" style='color:red'/>
 							</div>
 							<div class="form-group">
-								<form:label path="content_text">내용</form:label>
-								<form:textarea path="content_text" class="form-control" rows="10" style="resize: none"/>
-								<form:errors path="content_text" style='color:red'/>
+								<form:label path="adopt_content">내용</form:label>
+								<form:textarea path="adopt_content" class="form-control" rows="10" style="resize: none"/>
+								<form:errors path="adopt_content" style='color:red'/>
 							</div>
 							<div class="form-group">
-								<form:label path="upload_file">첨부 이미지</form:label>
-								<form:input path="upload_file" type='file' class="form-control" accept="image/*"/>
+								<form:label path="upload_img">첨부 이미지</form:label>
+								<form:input path="upload_img" type='file' class="form-control" accept="image/*"/>
 							</div>
 							<div class="form-group">
 								<div class="text-right">

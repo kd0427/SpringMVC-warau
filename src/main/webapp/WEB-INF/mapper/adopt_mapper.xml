@@ -18,4 +18,15 @@
 			#{adopt_writer})
 	]]>
 	</insert>
+	
+	<!-- 글읽기 -->
+	<select id="getContentInfo" parameterType="java.lang.Integer" resultType="com.global.vo.AdoptVO">
+		<![CDATA[
+			select adopt_writer,
+			to_char(adopt_regdate, 'YYYY-MM-DD') as adopt_regdate,
+			adopt_title, adopt_content, adopt_img
+			from adopt_table
+			where adopt_idx =#{adopt_idx}
+		]]>
+	</select>
 </mapper>
