@@ -32,7 +32,7 @@
 					<c:forEach var='adoptList' items='${adoptList }'>
 						<tr>
 							<td class="text-center d-none d-md-table-cell">${adoptList.adopt_idx }</td>
-							<td><a href='${root }board/read'>${adoptList.adopt_title }</a></td>
+							<td><a href='${root }board/read?adopt_idx=${adoptList.adopt_idx}'>${adoptList.adopt_title }</a></td>
 							<td class="text-center d-none d-md-table-cell">${adoptList.adopt_writer }</td>
 							<td class="text-center d-none d-md-table-cell">${adoptList.adopt_regdate}</td>
 
