@@ -13,6 +13,7 @@
 </head>
 <body>
 
+<!-- top menu -->
 	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
 
 	<!-- 게시글 리스트 -->
@@ -34,6 +35,9 @@
 							<td class="text-center d-none d-md-table-cell">10</td>
 							<td><a href='${root }board/read'>글 제목 입니다</a></td>
 							<td class="text-center d-none d-md-table-cell">홍길동</td>
+		
+		
+		
 							<td class="text-center d-none d-md-table-cell">2018-12-12</td>
 
 						</tr>
@@ -136,7 +140,6 @@
 	</div>
 
 	<!-- 푸터 -->
-
 	<c:import url="/WEB-INF/views/include/bottom_info.jsp"></c:import>
 
 </body>
