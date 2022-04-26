@@ -29,5 +29,11 @@ public class PetroDAO {
 		sqlSessionTemplate.insert("petro.petroAddWrite", petroWriteVO);
 	}
 	
+	//글 읽기
+	public PetroVO petroWriteInfo(int petro_idx) {
+		
+		return sqlSessionTemplate.selectOne("petro.petroWriteInfo", petro_idx);
+	}
+	
 	
 }

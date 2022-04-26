@@ -67,6 +67,11 @@ public class PetroService {
 		petroDAO.petroAddWrite(petroWriteVO);
 	}
 
+		
+		public PetroVO petroWriteInfo(int petro_idx) { 
+			
+			return petroDAO.petroWriteInfo(petro_idx);
+		}
 
 	
 
