@@ -63,6 +63,7 @@
 			ref='sqlSession' />
 	</beans:bean>
 	
+
 	<!-- 인터셉터 -->
 	<interceptors>
 		<interceptor>
@@ -89,5 +90,5 @@
 	</beans:bean>
 	
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
-	
+
 </beans:beans>

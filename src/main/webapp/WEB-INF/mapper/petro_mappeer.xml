@@ -9,10 +9,21 @@
 	<select id="getPetroList" resultType="com.global.vo.PetroVO">
 		<![CDATA[
 			select petro_idx, petro_title, petro_writer, 
-				to_char(petro_regdate, 'YYYY-MM-DD') 
+				to_char(petro_regdate, 'YYYY-MM-DD') as petro_regdate
 			from petro_table 
 			order by petro_idx desc
 		]]>
 	</select>
+	
+<!-- 글쓴ㄱ ㅓ 저장 -->
+<insert id="petroAddWrite" parameterType="com.global.vo.PetroVO">
+	<![CDATA[
+		insert into petro_table(petro_idx, petro_title, petro_content, 
+		petro_img, petro_writer, petro_regdate)	
+		values (petro_seq.nextval, #{petro_title}, #{petro_content}, #{petro_img, jdbcType=VARCHAR}, 
+		#{petro_writer}, sysdate)
+		]]>
+</insert>
+
 
 </mapper>
