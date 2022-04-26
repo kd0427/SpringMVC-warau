@@ -36,7 +36,7 @@
 						
 						<tr>
 							<td class="text-center d-none d-md-table-cell">${p.petro_idx }</td>
-							<td><a href='${root }board/read'>${p.petro_title }</a></td>
+							<td><a href='${root }board/petro/read?petro_idx=${p.petro_idx}'>${p.petro_title }</a></td>
 							<td class="text-center d-none d-md-table-cell">${p.petro_writer }</td>
 							<td class="text-center d-none d-md-table-cell">${p.petro_regdate }</td>
 
