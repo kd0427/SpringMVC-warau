@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.global.service.PetroService;
 import com.global.vo.PetroVO;
@@ -34,6 +33,25 @@ public class PetroController {
 		return "board/petro/petro";
 	}
 	
+	@GetMapping("/petro/write")
+	public String write(@ModelAttribute("petroWriteVO") PetroVO petroWriteVO) {
+		
+		return "/board/petro/write";
+	}
+	
+	
+	@PostMapping("/petro/write_pro")
+	public String write_pro(@Valid @ModelAttribute("petroWriteVO") PetroVO petroWriteVO, BindingResult result) {
+		
+		if(result.hasErrors()) { //제목, 내용 유효성검사
+			
+			return "/board/petro/write";
+		}
+		
+		petroService.petroAddWrite(petroWriteVO);
+		
+		return "/board/petro/write_success";
+	}
 	
 
 	

@@ -63,9 +63,7 @@
 			ref='sqlSession' />
 	</beans:bean>
 	
-<<<<<<< HEAD
-	
-=======
+
 	<!-- 인터셉터 -->
 	<interceptors>
 		<interceptor>
@@ -92,6 +90,5 @@
 	</beans:bean>
 	
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
->>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
-	
+
 </beans:beans>
