@@ -21,5 +21,13 @@ public class PetroDAO {
 		return sqlSessionTemplate.selectList("petro.getPetroList");
 		
 	}
-
+	
+	
+	//글쓰기 (저장)
+	public void petroAddWrite(PetroVO petroWriteVO) {
+		
+		sqlSessionTemplate.insert("petro.petroAddWrite", petroWriteVO);
+	}
+	
+	
 }

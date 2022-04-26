@@ -1,19 +1,28 @@
 package com.global.vo;
 
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class PetroVO {
 	
 	private int petro_idx;
 	
+	@NotBlank
 	private String petro_title;
+	
+	@NotBlank
 	private String petro_content;
+	
 	private String petro_regdate;
 	
 	private int petro_like;
 	private int petro_hit;
 	
-	private String petro_img;
+	
+	private String petro_img; // ㄷㅣ비 꺼
+	private MultipartFile upload_file; // 브라우저가 보낼 파일 데이터 를 멀티파트파일이라는 객체를 담기 위한 변수(클라이언트가 보낼) 
+	
 	private String petro_writer;
 	
 	
@@ -65,6 +74,14 @@ public class PetroVO {
 	public void setPetro_writer(String petro_writer) {
 		this.petro_writer = petro_writer;
 	}
+	public MultipartFile getUpload_file() {
+		return upload_file;
+	}
+	public void setUpload_file(MultipartFile upload_file) {
+		this.upload_file = upload_file;
+	}
+	
+	
 	
 	
 
