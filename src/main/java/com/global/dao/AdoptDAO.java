@@ -18,4 +18,9 @@ public class AdoptDAO {
 	public List<AdoptVO> getList(){
 		return sqlSessionTemplate.selectList("adopt.getList");
 	}
+	
+	//글쓰기
+	public void write(AdoptVO writeAdoptVO) {
+		sqlSessionTemplate.insert("adopt.write",writeAdoptVO);
+	}
 }
