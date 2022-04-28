@@ -52,7 +52,7 @@ public class PetroService {
 			
 		}
 	
-		
+		 
 		//글쓰기 
 		public void petroAddWrite(PetroVO petroWriteVO) {
 		
@@ -69,17 +69,30 @@ public class PetroService {
 	}
 
 		
+		//글 정보
 		public PetroVO petroWriteInfo(int petro_idx) { 
 			
 			return petroDAO.petroWriteInfo(petro_idx);
 		}
-
-	
 		
 		
+		//글 삭제
+		public void petroWriteDelete(int petro_idx) {
+			
+			petroDAO.petroWriteDelete(petro_idx);
+		}
 		
-		
-		
-
+		//글 수정
+		public void petroModifyInfo(PetroVO petroModifyVO) {
+			
+			MultipartFile upload_file = petroModifyVO.getUpload_file();
+			
+			if(upload_file.getSize() > 0) { //파일이 있으면
+				String file_name = saveUplaodFile(upload_file); // 현재시간 + 파일이름 불러주는 메소드 호출
+				petroModifyVO.setPetro_img(file_name); //(디비이름)img에도 업로드한 이미지의 이름을 
+			}
+			
+			petroDAO.petroModifyInfo(petroModifyVO);
+		}
 	
 }

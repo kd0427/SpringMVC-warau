@@ -49,8 +49,10 @@
 					<div class="form-group">
 						<div class="text-right">
 							<a href="${root }board/petro" class="btn btn-primary">목록보기</a>
-							<a href="${root }board/petro/modify" class="btn btn-info">수정하기</a>
-							<a href="${root }board/petro/delete" class="btn btn-danger">삭제하기</a>
+							<c:if test="${loginUserVO.user_id == petroReadVO.petro_writer}">
+							<a href="${root }board/petro/modify?petro_idx=${petro_idx}" class="btn btn-info">수정하기</a>
+							<a href="${root }board/petro/delete?petro_idx=${petro_idx}" class="btn btn-danger">삭제하기</a>
+							</c:if>
 						</div>
 					</div>
 				</div>
