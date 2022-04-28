@@ -73,6 +73,14 @@
 			<exclude-mapping path="/board/main"/>
 			<beans:bean class='com.global.interceptor.CheckLoginInterceptor'/>
 		</interceptor>
+		
+		<!-- Petro인터셉터 -->
+		<interceptor>
+			<mapping path="/board/petro/modify"/>
+			<mapping path="/board/petro/delete"/>
+			<beans:bean class='com.global.interceptor.CheckPetroInterceptor'/>
+		</interceptor>
+		
 	</interceptors>
 	
 	<!-- MessageSource를 등록한다. -->
