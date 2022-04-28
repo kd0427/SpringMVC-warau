@@ -32,15 +32,19 @@ public class AdoptService {
 	
 	//글쓰기
 	private String saveUploadFile(MultipartFile upload_file,HttpServletRequest request) {
-		String root_path = request.getSession().getServletContext().getRealPath("/");  
-	    String attach_path = "resources/upload/";
+		String root_path = request.getSession().getServletContext().getRealPath("/resources/upload/");  
 		String file_name = System.currentTimeMillis() + "_" + upload_file.getOriginalFilename();
 		//사용자가 보낸 파일 이름앞에 현재시간을 달아준다.
 		
+		File uploadImg = new File(root_path, file_name);
+		if(!uploadImg.exists()) { uploadImg.mkdirs(); }
+
+
+		
 		try {
-			upload_file.transferTo(new File(root_path+attach_path+file_name));
+			upload_file.transferTo(uploadImg);
 			
-			System.out.println(root_path+attach_path);
+			System.out.println(root_path+file_name);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

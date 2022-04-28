@@ -12,8 +12,8 @@ var $window = $(window),
     $mainHeader = $('#main-header'),
     $logonav=$('#logodiv')
     $logodiv=$('.logo')
-    $defaultLogo ='/img/logo.png',
-    $smallLogo = '/img/logo2.png';
+    $defaultLogo ='/app/img/logo.png',
+    $smallLogo = '/app/img/logo2.png';
 
     $window.scroll(function(){
       if($(this).scrollTop()>100){
