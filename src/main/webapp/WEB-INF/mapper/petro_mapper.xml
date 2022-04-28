@@ -25,15 +25,36 @@
 		]]>
 </insert>
 
-<!-- 글 쓰고 읽기 -->
+<!-- 글 읽기 -->
 	<select id="petroWriteInfo" parameterType="java.lang.Integer" resultType="com.global.vo.PetroVO">
 	<![CDATA[
-		select 	petro_writer,
-				to_char(petro_regdate, 'YYYY-MM-DD') as petro_regdate,
-		 		petro_title, petro_content, petro_img
-				from petro_table 
-				where petro_idx = #{petro_idx}
+
+		select 	a1.petro_writer,
+				to_char(a1.petro_regdate, 'YYYY-MM-DD') as petro_regdate,
+		 		a1.petro_title, a1.petro_content, a1.petro_img, a2.user_id
+				from petro_table a1, user_table a2
+				where a1.petro_writer = a2.user_id 
+						and petro_idx = #{petro_idx}
 		]]>
 	</select>
+	
+<!-- 글 삭제 -->	
+	<delete id="petroWriteDelete" parameterType="java.lang.Integer" >
+		<![CDATA[
+		delete from petro_table where petro_idx = #{petro_idx}
+		]]>
+	</delete>
+	
+	
+<!-- 글 수정 -->	
+	<update id="petroModifyInfo" parameterType="com.global.vo.PetroVO">
+		<![CDATA[
+			update petro_table
+				set petro_title = #{petro_title}, petro_content = #{petro_content},
+				petro_img = #{petro_img, jdbcType=VARCHAR}
+				where petro_idx = #{petro_idx}
+		]]>
+	</update>
+
 
 </mapper>
