@@ -52,6 +52,7 @@ public class PetroService {
 			
 		}
 	
+		
 		//글쓰기 
 		public void petroAddWrite(PetroVO petroWriteVO) {
 		
@@ -74,6 +75,11 @@ public class PetroService {
 		}
 
 	
+		
+		
+		
+		
+		
 
 	
 }
