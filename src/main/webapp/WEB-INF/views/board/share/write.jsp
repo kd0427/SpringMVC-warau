@@ -23,7 +23,7 @@
 				<div class="card shadow">
 					<div class="card-body">
 
-						<form:form action="${root }board/write_pro" method="post" modelAttribute="writeShareVO" enctype="multipart/form-data">
+						<form:form action="${root }board/share/write_pro" method="post" modelAttribute="writeShareVO" enctype="multipart/form-data">
 							<form:hidden path="content_board_idx"/>
 							<div class="form-group">
 								<form:label path="content_subject">제목</form:label>
