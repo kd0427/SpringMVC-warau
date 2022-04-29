@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 
 import com.global.dao.NoticeDAO;
-
 import com.global.vo.NoticeVO;
 
 @Service
@@ -20,5 +19,7 @@ public class NoticeService {
 		return noticeDAO.getNoticeList();
 	}
 	
-	
+	public NoticeVO getNotice(int notice_idx) {
+		return noticeDAO.getNotice(notice_idx);
+	}
 }

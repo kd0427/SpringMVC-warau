@@ -7,7 +7,7 @@ package com.global.dao;
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Repository;
 
-	import com.global.vo.ShareVO;
+import com.global.vo.ShareVO;
 
 	@Repository
 	public class ShareDAO {
@@ -23,6 +23,19 @@ package com.global.dao;
 		//글쓰기
 		public void write(ShareVO writeShareVO) {
 			sqlSessionTemplate.insert("share.write",writeShareVO);
+		}
+		//글읽기
+		public ShareVO getContentInfo(int share_idx) {
+			return sqlSessionTemplate.selectOne("share.getContentInfo", share_idx);
+		}
+		// 글 삭제
+		public void shareWriteDelete(int share_idx) {
+			sqlSessionTemplate.delete("share.shareWriteDelete", share_idx);
+		}
+
+		// 글 수정
+		public void shareModifyInfo(ShareVO shareModifyVO) {
+			sqlSessionTemplate.update("share.shareModifyInfo", shareModifyVO);
 		}
 	}
 
