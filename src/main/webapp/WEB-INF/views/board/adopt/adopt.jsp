@@ -9,7 +9,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Warau</title>
-
 </head>
 <body>
 
@@ -33,7 +32,7 @@
 					<c:forEach var='adoptList' items='${adoptList }'>
 						<tr>
 							<td class="text-center d-none d-md-table-cell">${adoptList.adopt_idx }</td>
-							<td><a href='${root }board/read'>${adoptList.adopt_title }</a></td>
+							<td><a href='${root }board/read?adopt_idx=${adoptList.adopt_idx}'>${adoptList.adopt_title }</a></td>
 							<td class="text-center d-none d-md-table-cell">${adoptList.adopt_writer }</td>
 							<td class="text-center d-none d-md-table-cell">${adoptList.adopt_regdate}</td>
 

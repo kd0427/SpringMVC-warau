@@ -17,9 +17,29 @@ public class PetroDAO {
 	
 	//게시글 목록 가져오기 
 	public List<PetroVO> getPetroList() {
-		
 		return sqlSessionTemplate.selectList("petro.getPetroList");
-		
 	}
-
+	
+	
+	//글쓰기 (저장)
+	public void petroAddWrite(PetroVO petroWriteVO) {
+		sqlSessionTemplate.insert("petro.petroAddWrite", petroWriteVO);
+	}
+	
+	//글 읽기
+	public PetroVO petroWriteInfo(int petro_idx) {
+		return sqlSessionTemplate.selectOne("petro.petroWriteInfo", petro_idx);
+	}
+	
+	//글 삭제
+	public void petroWriteDelete(int petro_idx) {
+		sqlSessionTemplate.delete("petro.petroWriteDelete", petro_idx);
+	}
+	
+	//글 수정
+	public void petroModifyInfo(PetroVO petroModifyVO) {
+		sqlSessionTemplate.update("petro.petroModifyInfo", petroModifyVO);
+	}
+	
+	
 }

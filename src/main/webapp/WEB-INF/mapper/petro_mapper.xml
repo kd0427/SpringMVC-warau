@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+						
+<mapper namespace="petro">
+
+<!-- //글목록시발 글 번호, 제목, 작성자, 작성날짜 petro_idx, petro_title, petro_writer, petro_regdate -->
+
+	<select id="getPetroList" resultType="com.global.vo.PetroVO">
+		<![CDATA[
+			select petro_idx, petro_title, petro_writer, 
+				to_char(petro_regdate, 'YYYY-MM-DD') as petro_regdate
+			from petro_table 
+			order by petro_idx desc
+		]]>
+	</select>
+	
+<!-- 글쓴ㄱ ㅓ 저장 -->
+<insert id="petroAddWrite" parameterType="com.global.vo.PetroVO">
+	<![CDATA[
+		insert into petro_table(petro_idx, petro_title, petro_content, 
+		petro_img, petro_writer, petro_regdate)	
+		values (petro_seq.nextval, #{petro_title}, #{petro_content}, #{petro_img, jdbcType=VARCHAR}, 
+		#{petro_writer}, sysdate)
+		]]>
+</insert>
+
+<!-- 글 읽기 -->
+	<select id="petroWriteInfo" parameterType="java.lang.Integer" resultType="com.global.vo.PetroVO">
+	<![CDATA[
+
+		select 	a1.petro_writer,
+				to_char(a1.petro_regdate, 'YYYY-MM-DD') as petro_regdate,
+		 		a1.petro_title, a1.petro_content, a1.petro_img, a2.user_id
+				from petro_table a1, user_table a2
+				where a1.petro_writer = a2.user_id 
+						and petro_idx = #{petro_idx}
+		]]>
+	</select>
+	
+<!-- 글 삭제 -->	
+	<delete id="petroWriteDelete" parameterType="java.lang.Integer" >
+		<![CDATA[
+		delete from petro_table where petro_idx = #{petro_idx}
+		]]>
+	</delete>
+	
+	
+<!-- 글 수정 -->	
+	<update id="petroModifyInfo" parameterType="com.global.vo.PetroVO">
+		<![CDATA[
+			update petro_table
+				set petro_title = #{petro_title}, petro_content = #{petro_content},
+				petro_img = #{petro_img, jdbcType=VARCHAR}
+				where petro_idx = #{petro_idx}
+		]]>
+	</update>
+
+
+</mapper>

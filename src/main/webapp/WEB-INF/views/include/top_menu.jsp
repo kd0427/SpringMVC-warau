@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="root" value="${pageContext.request.contextPath }/" />
+<c:set var="root" value="${pageContext.request.contextPath}/" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,13 +87,26 @@
 					<li><a href="#">COMPANY</a></li>
 				</ul>
 			</div>
-			<div class="sub">
-				<ul>
-					<li><a href="#">LOGIN</a></li>
-					<li>|</li>
-					<li><a href="#">JOIN</a></li>
-				</ul>
-			</div>
+			<c:choose>
+					<c:when test="${loginUserVO.userLogin == true }">
+						<div class="sub">
+							<ul>
+								<li><a href="${root }user/logout">LOGOUT</a></li>
+								<li>|</li>
+								<li><a href="${root }user/modify">MYPAGE</a></li>
+							</ul>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="sub">
+							<ul>
+								<li><a href="${root }user/login">LOGIN</a></li>
+								<li>|</li>
+								<li><a href="${root }user/join">JOIN</a></li>
+							</ul>
+						</div>
+					</c:otherwise>
+				</c:choose>
 		</nav>
 	</header>
 

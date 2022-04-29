@@ -296,7 +296,7 @@
 
 			<div class="item">
 				<div class="shareImg">
-					<a href="#"><img src="${root }img/share/share8.jpg" alt=""></a>
+					<a href="#"><img src="${root}img/share/share8.jpg" alt=""></a>
 				</div>
 				<div class="shareText">
 					<div>급수대에요 물먹이기 편해요</div>

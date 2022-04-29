@@ -37,6 +37,7 @@
 				<beans:value>/WEB-INF/properties/option.properties</beans:value>
 			</beans:list>
 		</beans:property>
+		<beans:property name="fileEncoding" value="UTF-8" />
 	</beans:bean>
 
 	<beans:bean class="org.apache.commons.dbcp2.BasicDataSource"
@@ -62,4 +63,40 @@
 			ref='sqlSession' />
 	</beans:bean>
 	
+
+	<!-- 인터셉터 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/user/modify"/>
+			<mapping path="/user/logout"/>			
+			<mapping path="/board/*"/>
+			<exclude-mapping path="/board/main"/>
+			<beans:bean class='com.global.interceptor.CheckLoginInterceptor'/>
+		</interceptor>
+		
+		<!-- Petro인터셉터 -->
+		<interceptor>
+			<mapping path="/board/petro/modify"/>
+			<mapping path="/board/petro/delete"/>
+			<beans:bean class='com.global.interceptor.CheckPetroInterceptor'/>
+		</interceptor>
+		
+	</interceptors>
+	
+	<!-- MessageSource를 등록한다. -->
+	<beans:bean class='org.springframework.context.support.ReloadableResourceBundleMessageSource' id='messageSource'>
+		<beans:property name="basenames">
+			<beans:list>
+				<beans:value>/WEB-INF/properties/error_message</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	
+	<!-- Message 접근을 위한 접근자 등록 -->
+	<beans:bean class='org.springframework.context.support.MessageSourceAccessor'>
+		<beans:constructor-arg ref='messageSource'/>
+	</beans:bean>
+	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
+
 </beans:beans>
