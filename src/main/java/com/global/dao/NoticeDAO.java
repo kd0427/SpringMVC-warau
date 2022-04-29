@@ -19,6 +19,6 @@ public class NoticeDAO {
 	}
 
 	public NoticeVO getNotice(int notice_idx) {
-		return sqlSessionTemplate.selectOne("notice.getNotice");
+		return sqlSessionTemplate.selectOne("notice.getNotice",notice_idx);
 	}
 }

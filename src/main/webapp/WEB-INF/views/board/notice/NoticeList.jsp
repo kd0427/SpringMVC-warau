@@ -19,7 +19,7 @@
 	<div class="container" style="margin-top: 100px">
 		<div class="card shadow">
 			<div class="card-body">
-				<h4 class="card-title">WARAU에서 알려드립니다!</h4>
+				<h4 class="card-title" border="1">WARAU에서 알려드립니다!</h4>
 				<table class="table table-hover" id='noticeList'>
 					<thead>
 						<tr>
