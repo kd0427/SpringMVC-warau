@@ -18,4 +18,15 @@
 			#{share_writer})
 	]]>
 	</insert>
+	
+	<!-- 글읽기 -->
+	<select id="getContentInfo" parameterType="java.lang.Integer" resultType="com.global.vo.ShareVO">
+		<![CDATA[
+			select share_writer,
+			to_char(share_regdate, 'YYYY-MM-DD') as share_regdate,
+			share_title, share_content, share_img
+			from share_table
+			where share_idx =#{share_idx}
+		]]>
+	</select>
 </mapper>

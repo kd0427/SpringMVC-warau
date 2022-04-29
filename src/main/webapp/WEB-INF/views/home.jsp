@@ -78,7 +78,7 @@
 									<div class="icon material-icons-outlined">
 										<span>favorite</span>commentsend
 									</div>
-									<div>좋아요 1234개</div>
+									<div>좋아요 1235개</div>
 									<div class="id">codud0826 멍멍이랑 바다갔어요</div>
 								</div>
 							</div>
