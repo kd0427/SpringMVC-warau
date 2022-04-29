@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.global.service.AdoptService;
 import com.global.vo.AdoptVO;
+import com.global.vo.PageVO;
 import com.global.vo.UserVO;
 
 
@@ -43,6 +44,9 @@ public class AdoptController {
 		model.addAttribute("adoptList",adoptList);
 		System.out.println(adoptList);
 		
+		//페이징
+		PageVO pageVO = adoptService.adoptWriteCnt(page);
+		model.addAttribute("pageVO", pageVO);
 		
 		return "board/adopt/adopt";
 	}
