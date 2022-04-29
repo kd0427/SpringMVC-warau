@@ -9,11 +9,13 @@
 		]]>
 	</select>
 	
-	<select id="getNotice" resultType="com.global.vo.NoticeVO">
-		<![CDATA[]
-		
-			selet * from notice_table where NOtice_idx
-		
+	<select id="getNotice" parameterType="java.lang.Integer" resultType="com.global.vo.NoticeVO">
+		<![CDATA[
+			select notice_writer,
+			to_char(notice_regdate, 'YYYY-MM-DD') as notice_regdate,
+			notice_title, notice_content
+			from notice_table
+			where notice_idx =#{notice_idx}
 		]]>
 	</select>
 </mapper>

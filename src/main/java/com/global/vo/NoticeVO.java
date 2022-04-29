@@ -46,6 +46,7 @@ public class NoticeVO {
 	public void setNotice_hit(int notice_hit) {
 		this.notice_hit = notice_hit;
 	}
+	
 	@Override
 	public String toString() {
 		return "NoticeVO [notice_idx=" + notice_idx + ", notice_title=" + notice_title + ", notice_content="
