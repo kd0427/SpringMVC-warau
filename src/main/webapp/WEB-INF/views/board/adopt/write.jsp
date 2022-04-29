@@ -23,7 +23,7 @@
 				<div class="card shadow">
 					<div class="card-body">
 
-						<form:form action="${root }board/write_pro" method="post" modelAttribute="writeAdoptVO" enctype="multipart/form-data">
+						<form:form action="${root }board/adopt/write_pro" method="post" modelAttribute="writeAdoptVO" enctype="multipart/form-data">
 							<form:hidden path="adopt_idx"/>
 							<div class="form-group">
 								<form:label path="adopt_title">제목</form:label>

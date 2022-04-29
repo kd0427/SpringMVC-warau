@@ -50,7 +50,7 @@
 
 	<!--와라우 소개글-->
 	<section class="warauintro inner scroll-spy">
-		<div class="top back-to-position to-left">Warau 20222</div>
+		<div class="top back-to-position to-left">Warau2022</div>
 		<h2 class="back-to-position to-right">
 			더 행복한 내일을 위해 <br /> 새로운 가족을 만날 수 있는 곳<br /> 집사들의 모든것을 나눌 수 있는 곳<br />
 
@@ -78,7 +78,7 @@
 									<div class="icon material-icons-outlined">
 										<span>favorite</span>commentsend
 									</div>
-									<div>좋아요 1254개</div>
+									<div>좋아요 1235개</div>
 									<div class="id">codud0826 멍멍이랑 바다갔어요</div>
 								</div>
 							</div>

@@ -10,22 +10,32 @@ import com.global.vo.AdoptVO;
 
 @Repository
 public class AdoptDAO {
-	
+
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
-	
-	//리스트 가져오기
-	public List<AdoptVO> getList(){
+
+	// 리스트 가져오기
+	public List<AdoptVO> getList() {
 		return sqlSessionTemplate.selectList("adopt.getList");
 	}
-	
-	//글쓰기
+
+	// 글쓰기
 	public void write(AdoptVO writeAdoptVO) {
-		sqlSessionTemplate.insert("adopt.write",writeAdoptVO);
+		sqlSessionTemplate.insert("adopt.write", writeAdoptVO);
 	}
-	
-	//글읽기
+
+	// 글읽기
 	public AdoptVO getContentInfo(int adopt_idx) {
 		return sqlSessionTemplate.selectOne("adopt.getContentInfo", adopt_idx);
+	}
+
+	// 글 삭제
+	public void adoptWriteDelete(int adopt_idx) {
+		sqlSessionTemplate.delete("adopt.adoptWriteDelete", adopt_idx);
+	}
+
+	// 글 수정
+	public void adoptModifyInfo(AdoptVO adoptModifyVO) {
+		sqlSessionTemplate.update("adopt.adoptModifyInfo", adoptModifyVO);
 	}
 }
