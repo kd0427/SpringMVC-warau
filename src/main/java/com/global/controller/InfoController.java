@@ -41,13 +41,13 @@ public class InfoController {
 		
 		return "board/info/info";
 	}
-	@GetMapping("/write")
+	@GetMapping("/info/write")
 	public String write(@ModelAttribute("writeInfoVO") InfoVO writeInfoVO) {
 		
 		return"board/info/write";
 	}
 	
-	@PostMapping("/write_pro")
+	@PostMapping("/info/write_pro")
 	public String write_pro(@Valid @ModelAttribute("writeInfoVO") InfoVO writeInfoVO, BindingResult result,HttpServletRequest request) {
 
 		if(result.hasErrors()) {
@@ -61,7 +61,7 @@ public class InfoController {
 	
 
 }
-	@GetMapping("/read")
+	@GetMapping("/info/read")
 	public String read(@RequestParam("info_idx") int info_idx,
 					   Model model) {
 		
