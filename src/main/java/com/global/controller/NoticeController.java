@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.global.service.NoticeService;
+import com.global.vo.AdoptVO;
 import com.global.vo.NoticeVO;
 
 @Controller
@@ -31,6 +32,8 @@ public class NoticeController {
 	@GetMapping("/read")
 	public String read(@RequestParam("notice_idx") int notice_idx,
 						Model model) {
+		NoticeVO rNoticeVO = noticeService.getNotice(notice_idx);
+		model.addAttribute("rNoticeVO",rNoticeVO);
 		model.addAttribute("notice_idx", notice_idx);
 		
 		return "board/notice/Notice";

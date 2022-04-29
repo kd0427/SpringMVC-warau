@@ -128,7 +128,7 @@
 				</div>
 
 				<div class="text-right">
-					<a href="${root }board/write" class="btn btn-primary">글쓰기</a>
+					<a href="${root }board/info/write" class="btn btn-primary">글쓰기</a>
 				</div>
 
 			</div>
