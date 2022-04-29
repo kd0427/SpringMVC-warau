@@ -29,4 +29,20 @@
 			where adopt_idx =#{adopt_idx}
 		]]>
 	</select>
+	
+	<!-- 글 삭제 -->
+	<delete id="adoptWriteDelete" parameterType="java.lang.Integer" >
+		<![CDATA[
+		delete from adopt_table where adopt_idx = #{adopt_idx}
+		]]>
+	</delete>
+	<!-- 글 수정 -->
+	<update id="adoptModifyInfo" parameterType="com.global.vo.AdoptVO">
+		<![CDATA[
+			update adopt_table
+				set adopt_title = #{adopt_title}, adopt_content = #{adopt_content},
+				adopt_img = #{adopt_img, jdbcType=VARCHAR}
+				where adopt_idx = #{adopt_idx}
+		]]>
+	</update>
 </mapper>
