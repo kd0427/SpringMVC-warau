@@ -36,12 +36,11 @@ public class AdoptController {
 	
 	
 	@GetMapping("/adopt")
-	public String adopt(Model model) {
+	public String adopt(@RequestParam(value="page", defaultValue = "1") int page,
+						Model model) {
 
-		List<AdoptVO> adoptList = adoptService.getList();
-		
+		List<AdoptVO> adoptList = adoptService.getList(page);
 		model.addAttribute("adoptList",adoptList);
-		
 		System.out.println(adoptList);
 		
 		
