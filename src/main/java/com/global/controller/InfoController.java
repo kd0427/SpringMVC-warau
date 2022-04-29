@@ -1,6 +1,5 @@
 package com.global.controller;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,57 +16,106 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.global.service.InfoService;
+
 import com.global.vo.InfoVO;
-
-
 
 @Controller
 @RequestMapping("/board")
 public class InfoController {
-	
+
 	@Autowired
 	private InfoService infoService;
-	
-	
+
 	@GetMapping("/info")
 	public String info(Model model) {
 
 		List<InfoVO> infoList = infoService.getList();
-		
-		model.addAttribute("infoList",infoList);
-		
+
+		model.addAttribute("infoList", infoList);
+
 		System.out.println(infoList);
-		
-		
+
 		return "board/info/info";
 	}
+
 	@GetMapping("/info/write")
 	public String write(@ModelAttribute("writeInfoVO") InfoVO writeInfoVO) {
-		
-		return"board/info/write";
+
+		return "board/info/write";
 	}
-	
+
 	@PostMapping("/info/write_pro")
-	public String write_pro(@Valid @ModelAttribute("writeInfoVO") InfoVO writeInfoVO, BindingResult result,HttpServletRequest request) {
+	public String write_pro(@Valid @ModelAttribute("writeInfoVO") InfoVO writeInfoVO, BindingResult result,
+			HttpServletRequest request) {
 
-		if(result.hasErrors()) {
-			return "board/adopt/write";
+		if (result.hasErrors()) {
+			return "board/info/write";
 		}
-		
-		infoService.addContentInfo(writeInfoVO,request);
-		
-		
-		return "board/info/write_success";
-	
 
-}
+		infoService.addContentInfo(writeInfoVO, request);
+
+		return "board/info/write_success";
+
+	}
+
 	@GetMapping("/info/read")
-	public String read(@RequestParam("info_idx") int info_idx,
-					   Model model) {
-		
+	public String read(@RequestParam("info_idx") int info_idx, Model model) {
+
 		InfoVO readInfoVO = infoService.getContentInfo(info_idx);
-		model.addAttribute("readInfoVO",readInfoVO);
-		
+		model.addAttribute("readInfoVO", readInfoVO);
+		model.addAttribute("info_idx", info_idx);
+
 		return "board/info/read";
+	}
+
+//글 삭제
+	@GetMapping("/info/delete")
+	public String delete(@RequestParam("info_idx") int info_idx, Model model) {
+
+		infoService.infoWriteDelete(info_idx);
+		model.addAttribute("info_idx", info_idx);
+
+		return "board/adopt/delete";
+	}
+
+//글 수정
+	@GetMapping("/info/modify")
+	public String modify(@RequestParam("info_idx") int info_idx, @ModelAttribute("infoModifyVO") InfoVO infoModifyVO,
+			Model model) {
+
+		model.addAttribute("info_idx", info_idx); // (modify jsp)취소 버튼
+
+		InfoVO infoTempModifyVO = infoService.getContentInfo(info_idx);
+
+		// (modify.jsp-셋팅) 작성자, 작성날짜, 글 제목, 글 내용, 첨부이미지, 게시글 인덱스
+
+		infoModifyVO.setInfo_writer(infoTempModifyVO.getInfo_writer());
+		infoModifyVO.setInfo_regdate(infoTempModifyVO.getInfo_regdate());
+		infoModifyVO.setInfo_title(infoTempModifyVO.getInfo_title());
+		infoModifyVO.setInfo_content(infoTempModifyVO.getInfo_content());
+		infoModifyVO.setInfo_img(infoTempModifyVO.getInfo_img());
+		infoModifyVO.setInfo_idx(info_idx);
+
+		return "board/info/modify";
+	}
+
+	@PostMapping("/info/modify_pro")
+	public String modify_pro(@Valid @ModelAttribute("infoModifyVO") InfoVO infoModifyVO, BindingResult result) {
+
+		if (result.hasErrors()) {
+
+			return "board/info/modify";
+		}
+
+		infoService.infoModifyInfo(infoModifyVO);
+
+		return "board/info/modify_success";
+	}
+
+//작성 권한 처리
+	@GetMapping("/info/not_writer")
+	public String not_writer() {
+
+		return "/board/info/not_writer";
 	}
 }

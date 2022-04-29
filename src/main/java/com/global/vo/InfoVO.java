@@ -22,7 +22,7 @@ public class InfoVO {
 		this.info_idx = info_idx;
 	}
 
-	public String getAdopt_title() {
+	public String getInfo_title() {
 		return info_title;
 	}
 

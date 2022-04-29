@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.global.dao.InfoDAO;
+
 import com.global.vo.InfoVO;
 import com.global.vo.UserVO;
 
@@ -20,6 +22,8 @@ public class InfoService {
 	
 	@Autowired
 	private InfoDAO infoDAO;
+	
+	
 	
 	@Resource(name="loginUserVO")
 	@Lazy
@@ -72,6 +76,22 @@ public class InfoService {
 	///글읽기
 	public InfoVO getContentInfo(int info_idx) {
 		return infoDAO.getContentInfo(info_idx);
+	}
+	//글 삭제
+	public void infoWriteDelete(int info_idx) {
+		infoDAO.infoWriteDelete(info_idx);
+	}
+	//글 수정
+	public void infoModifyInfo(InfoVO infoModifyVO) {
+		
+		MultipartFile upload_file = infoModifyVO.getUpload_img();
+		
+		if(upload_file.getSize() > 0) { //파일이 있으면
+			String file_name = saveUploadFile(upload_file, null); // 현재시간 + 파일이름 불러주는 메소드 호출
+			infoModifyVO.setInfo_img(file_name); //(디비이름)img에도 업로드한 이미지의 이름을 
+		}
+		
+		infoDAO.infoModifyInfo(infoModifyVO);
 	}
 
 		

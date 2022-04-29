@@ -6,7 +6,9 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,14 +26,20 @@ public class AdoptService {
 	@Autowired
 	ServletContext servletContext;
 	
+	@Value("${page.listcnt}")
+	private int page_listcnt;
+	
 	@Resource(name="loginUserVO")
 	@Lazy
 	private UserVO loginUserVO;
 	
 	
 	//리스트가져오기
-	public List<AdoptVO> getList(){
-		return adoptDAO.getList();
+	public List<AdoptVO> getList(int page){
+		
+		int start =(page-1)* page_listcnt;
+		RowBounds rowbounds = new RowBounds(0, 5);
+		return adoptDAO.getList(rowbounds);
 	}
 	
 	//업로드 파일 저장 메소드
