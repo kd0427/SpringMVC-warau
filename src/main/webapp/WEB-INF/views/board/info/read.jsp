@@ -42,9 +42,9 @@
 					</div>
 					<div class="form-group">
 						<label for="board_content">내용</label>
-						<textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none" disabled="disabled">${readInfoVO.adopt_content}</textarea>
+						<textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none" disabled="disabled">${readInfoVO.info_content}</textarea>
 					</div>
-					<c:if test="${readAdoptVO.adopt_img != null }">
+					<c:if test="${readInfoVO.info_img != null }">
 						<div class="form-group">
 							<label for="board_file">첨부 이미지</label>
 							<img src="${root }upload/${readInfoVO.info_img}" width="100%"/>						
