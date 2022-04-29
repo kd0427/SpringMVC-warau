@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+	<select id="getNoticeList" resultType="com.global.vo.NoticeVO">
+		<![CDATA[
+			select * from notice_table order by notice_idx desc
+		]]>
+	</select>
+	
+	<select id="getNotice" parameterType="java.lang.Integer" resultType="com.global.vo.NoticeVO">
+		<![CDATA[
+			select notice_writer,
+			to_char(notice_regdate, 'YYYY-MM-DD') as notice_regdate,
+			notice_title, notice_content
+			from notice_table
+			where notice_idx =#{notice_idx}
+		]]>
+	</select>
+</mapper>

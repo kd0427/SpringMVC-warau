@@ -55,6 +55,14 @@
 				where petro_idx = #{petro_idx}
 		]]>
 	</update>
+	
+	
+	<!-- 페이징 -->
+	<select id="petroWriteCnt" resultType="java.lang.Integer" >
+			<![CDATA[
+				select count(*) from petro_table
+			]]>
+	</select>
 
 
 </mapper>
