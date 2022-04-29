@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.global.service.PetroService;
+import com.global.vo.PageVO;
 import com.global.vo.PetroVO;
 import com.global.vo.UserVO;
 
@@ -34,11 +35,17 @@ public class PetroController {
 
 	
 	@GetMapping("/petro")
-	public String petro(Model model) {
+	public String petro(@RequestParam(value= "page", defaultValue = "1") int page,
+						Model model) 
+	{
 		
 		//게시판 목록 가져오기
-		List<PetroVO> petroContentList = petroService.getPetroList();
+		List<PetroVO> petroContentList = petroService.getPetroList(page);
 		model.addAttribute("petroContentList", petroContentList);
+		
+		//페이징
+		PageVO pageVO = petroService.petroWriteCnt(page);
+		model.addAttribute("pageVO", pageVO);
 		
 		return "board/petro/petro";
 	}
@@ -138,6 +145,8 @@ public class PetroController {
 		
 		return "/board/petro/not_writer";
 	}
+	
+	
 	
 	
 }

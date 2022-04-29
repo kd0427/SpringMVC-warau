@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.global.dao.PetroDAO;
+import com.global.vo.PageVO;
 import com.global.vo.PetroVO;
 import com.global.vo.UserVO;
 
@@ -31,12 +33,20 @@ public class PetroService {
 	@Lazy
 	private UserVO loginUserVO;
 	
-
+	@Value("${page.listcnt}")
+	private int page_listcnt;
+	
+	@Value("${page.paginationcnt}")
+	private int page_paginationcnt;
 	
 	//게시판 목록 가져오기ㅣ
-	public List<PetroVO> getPetroList() {
+	public List<PetroVO> getPetroList(int page) {
 		
-		return petroDAO.getPetroList();
+		int start = (page - 1) * page_listcnt; //page 번호가 1이면 1-1 -> 0
+		RowBounds rowBounds = new RowBounds(start, page_listcnt); //0~10개
+		return petroDAO.getPetroList(rowBounds);
+		
+		
 	}
 	
 	//업로드 파일 저장 메소드
@@ -100,4 +110,15 @@ public class PetroService {
 			petroDAO.petroModifyInfo(petroModifyVO);
 		}
 	
+		
+		//페이징
+		
+		public PageVO petroWriteCnt(int currentPage) {
+			
+			int content_cnt = petroDAO.petroWriteCnt();
+			
+			PageVO pageVO = new PageVO(content_cnt, currentPage, page_listcnt, page_paginationcnt);
+			
+			return pageVO;
+		}
 }
