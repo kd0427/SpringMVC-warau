@@ -28,7 +28,7 @@ public class ShareController {
 	private ShareService shareService;
 	
 	
-	@GetMapping("/share/share")
+	@GetMapping("/share")
 	public String share(Model model) {
 
 		List<ShareVO> shareList = shareService.getList();
