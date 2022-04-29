@@ -26,19 +26,19 @@
 				<div class="card-body">
 					<div class="form-group">
 						<label for="board_writer_name">작성자</label>
-						<input type="text" id="notice_writer" name="notice_writer" class="form-control" value="${noticeRead.notice_writer}" disabled="disabled"/>
+						<input type="text" id="notice_writer" name="notice_writer" class="form-control" value="${getNotice.notice_writer}" disabled="disabled"/>
 					</div>
 					<div class="form-group">
 						<label for="board_date">작성날짜</label>
-						<input type="text" id="notice_regdate" name="notice_regdate" class="form-control" value="${noticeRead.notice_regdate }" disabled="disabled"/>
+						<input type="text" id="notice_regdate" name="notice_regdate" class="form-control" value="${getNotice.notice_regdate }" disabled="disabled"/>
 					</div>
 					<div class="form-group">
 						<label for="board_subject">제목</label>
-						<input type="text" id="notice_title" name="notice_title" class="form-control" value="${noticeRead.notice_title }" disabled="disabled"/>
+						<input type="text" id="notice_title" name="notice_title" class="form-control" value="${getNotice.notice_title }" disabled="disabled"/>
 					</div>
 					<div class="form-group">
 						<label for="board_content">내용</label>
-						<textarea id="notice_content" name="notice_content" class="notice_content" rows="10" style="resize:none" disabled="disabled">${noticeRead.notice_content}</textarea>
+						<textarea id="notice_content" name="notice_content" class="notice_content" rows="10" style="resize:none" disabled="disabled">${getNotice.notice_content}</textarea>
 					</div>
 					<div class="form-group">
 						<div class="text-right">
