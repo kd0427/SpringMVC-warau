@@ -24,16 +24,16 @@
 					<div class="card-body">
 
 						<form:form action="${root }board/share/write_pro" method="post" modelAttribute="writeShareVO" enctype="multipart/form-data">
-							<form:hidden path="content_board_idx"/>
+							<form:hidden path="share_idx"/>
 							<div class="form-group">
-								<form:label path="content_subject">제목</form:label>
-								<form:input path="content_subject" class="form-control"/>
-								<form:errors path="content_subject" style='color:red'/>
+								<form:label path="share_title">제목</form:label>
+								<form:input path="share_title" class="form-control"/>
+								<form:errors path="share_title" style='color:red'/>
 							</div>
 							<div class="form-group">
-								<form:label path="content_text">내용</form:label>
-								<form:textarea path="content_text" class="form-control" rows="10" style="resize: none"/>
-								<form:errors path="content_text" style='color:red'/>
+								<form:label path="share_content">내용</form:label>
+								<form:textarea path="share_content" class="form-control" rows="10" style="resize: none"/>
+								<form:errors path="share_content" style='color:red'/>
 							</div>
 							<div class="form-group">
 								<form:label path="upload_file">첨부 이미지</form:label>

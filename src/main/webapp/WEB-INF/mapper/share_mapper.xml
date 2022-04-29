@@ -14,7 +14,7 @@
 	<insert id="write" parameterType="com.global.vo.ShareVO">
 	<![CDATA[
 		insert into share_table(share_idx, share_title, share_content, share_regdate, share_img, share_writer)
-			values (share_seq.nextval, #{share_title}, #{share_content}, sysdate, #{share_img, jdbcType=VARCHAR},
+			values (share_seq.nextval, 00#{share_title}, #{share_content}, sysdate, #{share_img, jdbcType=VARCHAR},
 			#{share_writer})
 	]]>
 	</insert>
