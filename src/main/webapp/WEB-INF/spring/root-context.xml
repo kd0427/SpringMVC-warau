@@ -4,5 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+<<<<<<< HEAD
+	
+=======
 	<bean class='com.global.vo.UserVO' id="loginUserVO" scope='session'/>
+>>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
 </beans>

@@ -82,8 +82,8 @@
 							<li><a href="${root }intro/etc" class="last">기타</a></li>
 						</ul></li>
 
-					<li><a href="#">NOTICE</a></li>
-					<li><a href="#">Q&A</a></li>
+					<li><a href="${root }board/notice">NOTICE</a></li>
+					<li><a href="${root }board/qna">Q&A</a></li>
 					<li><a href="#">COMPANY</a></li>
 				</ul>
 			</div>
