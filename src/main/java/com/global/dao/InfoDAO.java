@@ -15,8 +15,18 @@ public class InfoDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 	
+	//리스트 가져오기
 	public List<InfoVO> getList(){
 		return sqlSessionTemplate.selectList("info.getList");
-		
 	}
+	
+	//글쓰기
+	public void write(InfoVO writeInfoVO) {
+		sqlSessionTemplate.insert("info.write",writeInfoVO);
+	}
+	//글읽기
+		public InfoVO getContentInfo(int info_idx) {
+			return sqlSessionTemplate.selectOne("info.getContentInfo", info_idx);
+		}
+	
 }
