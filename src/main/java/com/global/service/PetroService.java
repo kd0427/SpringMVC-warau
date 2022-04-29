@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,12 +24,14 @@ public class PetroService {
 	@Autowired
 	private PetroDAO petroDAO;
 	
+	@Autowired
+	private ServletContext servletContext;
+	
 	@Resource(name="loginUserVO")
 	@Lazy
 	private UserVO loginUserVO;
 	
-	@Value("${path.upload}")
-	private String path_upload;
+
 	
 	//게시판 목록 가져오기ㅣ
 	public List<PetroVO> getPetroList() {
@@ -39,10 +42,12 @@ public class PetroService {
 	//업로드 파일 저장 메소드
 		private String saveUplaodFile(MultipartFile upload_file) { //파일 이름이 중복될 수 있어서 현재시간 붙여서
 			String file_name = System.currentTimeMillis() + "_" + upload_file.getOriginalFilename();
+			String path = servletContext.getRealPath("/resources/upload");
+			System.out.println(path);
 			
 			try {
 
-				upload_file.transferTo(new File(path_upload + "/" + file_name)); //주입받은 업로드
+				upload_file.transferTo(new File(path + "/" + file_name)); //주입받은 업로드
 			} catch(Exception e) {
 				
 				e.printStackTrace();
