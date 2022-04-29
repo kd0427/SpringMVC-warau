@@ -28,5 +28,14 @@ import com.global.vo.ShareVO;
 		public ShareVO getContentInfo(int share_idx) {
 			return sqlSessionTemplate.selectOne("share.getContentInfo", share_idx);
 		}
+		// 글 삭제
+		public void shareWriteDelete(int share_idx) {
+			sqlSessionTemplate.delete("share.shareWriteDelete", share_idx);
+		}
+
+		// 글 수정
+		public void shareModifyInfo(ShareVO shareModifyVO) {
+			sqlSessionTemplate.update("share.shareModifyInfo", shareModifyVO);
+		}
 	}
 
