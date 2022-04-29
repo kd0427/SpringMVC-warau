@@ -45,4 +45,11 @@
 				where adopt_idx = #{adopt_idx}
 		]]>
 	</update>
+	
+	<!-- 페이징 -->
+	<select id="adoptWriteCnt" resultType="java.lang.Integer" >
+			<![CDATA[
+				select count(*) from adopt_table
+			]]>
+	</select>
 </mapper>
