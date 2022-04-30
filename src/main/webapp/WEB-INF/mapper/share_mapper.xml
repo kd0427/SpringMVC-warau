@@ -33,4 +33,26 @@
 			where share_idx = #{share_idx}
 		]]>
 	</select>
+	<!-- 글 삭제 -->
+	<delete id="shareWriteDelete" parameterType="java.lang.Integer" >
+		<![CDATA[
+		delete from share_table where share_idx = #{share_idx}
+		]]>
+	</delete>
+	<!-- 글 수정 -->
+	<update id="shareModifyInfo" parameterType="com.global.vo.ShareVO">
+		<![CDATA[
+			update share_table
+				set share_title = #{share_title}, share_content = #{share_content},
+				share_img = #{share_img, jdbcType=VARCHAR}
+				where share_idx = #{share_idx}
+		]]>
+	</update>
+	
+	<!-- 페이징 -->
+	<select id="shareWriteCnt" resultType="java.lang.Integer" >
+			<![CDATA[
+				select count(*) from share_table
+			]]>
+	</select>
 </mapper>

@@ -50,15 +50,18 @@
 							<img src="${root }upload/${readShareVO.share_img}" width="100%"/>						
 						</div>
 					</c:if>
+					
 					<div class="form-group">
 						<div class="text-right">
 							<a href="${root }board/share" class="btn btn-primary">목록보기</a>
 							<c:if test="${loginUserVO.user_id == readShareVO.share_writer}">
-							<a href="${root }board/modify?share_idx=${share_idx}" class="btn btn-info">수정하기</a>
-							<a href="${root }board/delete?share_idx=${share_idx}" class="btn btn-danger">삭제하기</a>
+							<a href="${root }board/share/modify?share_idx=${share_idx}" class="btn btn-info">수정하기</a>
+							<a href="${root }board/share/delete?share_idx=${share_idx}" class="btn btn-danger">삭제하기</a>
 							</c:if>
 						</div>
 					</div>
+					
+					
 				</div>
 			</div>
 		</div>

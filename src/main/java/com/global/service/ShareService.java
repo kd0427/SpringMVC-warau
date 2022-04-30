@@ -8,12 +8,14 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.global.dao.ShareDAO;
 import com.global.vo.AdoptVO;
+import com.global.vo.PageVO;
 import com.global.vo.ShareVO;
 import com.global.vo.UserVO;
 
@@ -29,6 +31,12 @@ public class ShareService {
 	@Resource(name = "loginUserVO")
 	@Lazy
 	private UserVO loginUserVO;
+	
+	@Value("${page.listcnt}")
+	private int page_listcnt;
+	
+	@Value("${page.paginationcnt}")
+	private int page_paginationcnt;
 
 	// 리스트가져오기
 	public List<ShareVO> getList() {
@@ -93,5 +101,16 @@ public class ShareService {
 
 		shareDAO.shareModifyInfo(shareModifyVO);
 	}
+	//페이징
+	
+	public PageVO shareWriteCnt(int currentPage) {
+		
+		int content_cnt = shareDAO.shareWriteCnt();
+		
+		PageVO pageVO = new PageVO(content_cnt, currentPage, page_listcnt, page_paginationcnt);
+		
+		return pageVO;
+	}
+
 
 }

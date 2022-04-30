@@ -37,5 +37,11 @@ import com.global.vo.ShareVO;
 		public void shareModifyInfo(ShareVO shareModifyVO) {
 			sqlSessionTemplate.update("share.shareModifyInfo", shareModifyVO);
 		}
+
+		// 페이징
+		
+			public int shareWriteCnt() {
+				return sqlSessionTemplate.selectOne("share.shareWriteCnt");
+			}
 	}
 
