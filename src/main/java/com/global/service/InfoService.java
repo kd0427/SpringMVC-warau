@@ -25,6 +25,9 @@ public class InfoService {
 	@Autowired
 	private InfoDAO infoDAO;
 	
+	@Autowired
+	private ServletContext servletContext;
+	
 	@Value("${page.listcnt}")
 	private int page_listcnt;
 	
@@ -44,8 +47,8 @@ public class InfoService {
 	}
 
 	//글쓰기
-	private String saveUploadFile(MultipartFile upload_file,HttpServletRequest request) {
-		String root_path = request.getSession().getServletContext().getRealPath("/resources/upload/");  
+	private String saveUploadFile(MultipartFile upload_file) {
+		String root_path = servletContext.getRealPath("/resources/upload/");  
 		String file_name = System.currentTimeMillis() + "_" + upload_file.getOriginalFilename();
 		//사용자가 보낸 파일 이름앞에 현재시간을 달아준다.
 		
@@ -66,12 +69,12 @@ public class InfoService {
 		return file_name;
 	}
 	
-	public void addContentInfo(InfoVO writeInfoVO,HttpServletRequest request) {
+	public void addContentInfo(InfoVO writeInfoVO) {
 		
 		MultipartFile upload_file = writeInfoVO.getUpload_img(); // 사용자가 요청한 파일
 		
 		if(upload_file.getSize()>0) { //파일이 있으면
-			String file_name = saveUploadFile(upload_file,request); // 파일 이름앞에 현재시간 달아주는 메소드 호출
+			String file_name = saveUploadFile(upload_file); // 파일 이름앞에 현재시간 달아주는 메소드 호출
 			
 			writeInfoVO.setInfo_img(file_name);
 		}
@@ -97,7 +100,7 @@ public class InfoService {
 		MultipartFile upload_file = infoModifyVO.getUpload_img();
 		
 		if(upload_file.getSize() > 0) { //파일이 있으면
-			String file_name = saveUploadFile(upload_file, null); // 현재시간 + 파일이름 불러주는 메소드 호출
+			String file_name = saveUploadFile(upload_file); // 현재시간 + 파일이름 불러주는 메소드 호출
 			infoModifyVO.setInfo_img(file_name); //(디비이름)img에도 업로드한 이미지의 이름을 
 		}
 		
