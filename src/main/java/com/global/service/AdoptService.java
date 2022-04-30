@@ -6,13 +6,16 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.global.dao.AdoptDAO;
 import com.global.vo.AdoptVO;
+import com.global.vo.PageVO;
 import com.global.vo.UserVO;
 
 @Service
@@ -24,14 +27,23 @@ public class AdoptService {
 	@Autowired
 	ServletContext servletContext;
 	
+	@Value("${page.listcnt}")
+	private int page_listcnt;
+	
+	@Value("${page.paginationcnt}")
+	private int page_paginationcnt;
+	
 	@Resource(name="loginUserVO")
 	@Lazy
 	private UserVO loginUserVO;
 	
 	
 	//리스트가져오기
-	public List<AdoptVO> getList(){
-		return adoptDAO.getList();
+	public List<AdoptVO> getList(int page){
+		
+		int start =(page-1)* page_listcnt;
+		RowBounds rowbounds = new RowBounds(start, page_listcnt);
+		return adoptDAO.getList(rowbounds);
 	}
 	
 	//업로드 파일 저장 메소드
@@ -90,6 +102,16 @@ public class AdoptService {
 				
 				adoptDAO.adoptModifyInfo(adoptModifyVO);
 			}
-
+			
+			//페이징
+			
+			public PageVO adoptWriteCnt(int currentPage) {
+				
+				int content_cnt = adoptDAO.adoptWriteCnt();
+				
+				PageVO pageVO = new PageVO(content_cnt, currentPage, page_listcnt, page_paginationcnt);
+				
+				return pageVO;
+			}
 	
 }

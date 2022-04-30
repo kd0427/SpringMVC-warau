@@ -14,12 +14,11 @@
 <body>
 
 	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
-
-	<!-- 게시글 리스트 -->
+<!-- 게시글 리스트 -->
 	<div class="container" style="margin-top: 100px">
 		<div class="card shadow">
 			<div class="card-body">
-				<h4 class="card-title">정보 나눠요</h4>
+				<h4 class="card-title">정보나눠요</h4>
 				<table class="table table-hover" id='board_list'>
 					<thead>
 						<tr>
@@ -30,45 +29,81 @@
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach var='infoList' items='${infoList }'>
-						<tr>
-							<td class="text-center d-none d-md-table-cell">${infoList.info_idx }</td>
-							<td><a href='${root }board/info/read?info_idx=${infoList.info_idx}'>${infoList.info_title }</a></td>
-							<td class="text-center d-none d-md-table-cell">${infoList.info_writer }</td>
-							<td class="text-center d-none d-md-table-cell">${infoList.info_regdate}</td>
+						<c:forEach var='infoList' items='${infoList }'>
+							<tr>
+								<td class="text-center d-none d-md-table-cell">${infoList.info_idx }</td>
+								<td><a
+									href='${root }board/info/read?info_idx=${infoList.info_idx}'>${infoList.info_title }</a></td>
+								<td class="text-center d-none d-md-table-cell">${infoList.info_writer }</td>
+								<td class="text-center d-none d-md-table-cell">${infoList.info_regdate}</td>
 
-						</tr>
-					</c:forEach>
+							</tr>
+						</c:forEach>
 					</tbody>
-					
+
 				</table>
 
 				<div class="d-none d-md-block">
 					<ul class="pagination justify-content-center">
-						<li class="page-item"><a href="#" class="page-link">이전</a></li>
-						<li class="page-item"><a href="#" class="page-link">1</a></li>
-						<li class="page-item"><a href="#" class="page-link">2</a></li>
-						<li class="page-item"><a href="#" class="page-link">3</a></li>
-						<li class="page-item"><a href="#" class="page-link">4</a></li>
-						<li class="page-item"><a href="#" class="page-link">5</a></li>
-						<li class="page-item"><a href="#" class="page-link">6</a></li>
-						<li class="page-item"><a href="#" class="page-link">7</a></li>
-						<li class="page-item"><a href="#" class="page-link">8</a></li>
-						<li class="page-item"><a href="#" class="page-link">9</a></li>
-						<li class="page-item"><a href="#" class="page-link">10</a></li>
-						<li class="page-item"><a href="#" class="page-link">다음</a></li>
+
+						<!-- 이전버튼 -->
+						<c:choose>
+							<c:when test="${pageVO.prevPage <= 0 }">
+								<li class="page-item disabled"><a href="#"
+									class="page-link">이전</a></li>
+							</c:when>
+							<c:otherwise>
+								<li class="page-item "><a
+									href="${root }board/info?page=${pageVO.prevPage}"
+									class="page-link">이전</a></li>
+							</c:otherwise>
+						</c:choose>
+
+
+
+						<!-- 페이지 버튼 -->
+						<c:forEach var="p_idx" begin="${pageVO.min }" end="${pageVO.max }">
+							<c:choose>
+								<c:when test="${p_idx == pageVO.currentPage }">
+									<li class="page-item active"><a
+										href="${root }board/info?page=${p_idx}" class="page-link">${p_idx}</a>
+									</li>
+								</c:when>
+								<c:otherwise>
+									<li class="page-item "><a
+										href="${root }board/info?page=${p_idx}" class="page-link">${p_idx}</a>
+									</li>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+
+
+
+						<!-- 다음 버튼 -->
+						<c:choose>
+							<c:when test="${pageVO.max >= pageVO.pageCnt }">
+								<li class="page-item disabled"><a href="#"
+									class="page-link">다음</a></li>
+							</c:when>
+							<c:otherwise>
+								<li class="page-item"><a
+									href="${root }board/info?page=${pageVO.nextPage}"
+									class="page-link">다음</a></li>
+							</c:otherwise>
+						</c:choose>
+
+
+
+
 					</ul>
 				</div>
 
-				<div class="d-block d-md-none">
-					<ul class="pagination justify-content-center">
-						<li class="page-item"><a href="#" class="page-link">이전</a></li>
-						<li class="page-item"><a href="#" class="page-link">다음</a></li>
-					</ul>
-				</div>
+
+
+
 
 				<div class="text-right">
-					<a href="${root }board/info/write" class="btn btn-primary">글쓰기</a>
+					<a href="${root }board/adopt/write" class="btn btn-primary">글쓰기</a>
 				</div>
 
 			</div>
@@ -81,5 +116,4 @@
 
 </body>
 </html>
-
 

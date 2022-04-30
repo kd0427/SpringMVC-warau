@@ -35,6 +35,7 @@
 			<beans:list>
 				<beans:value>/WEB-INF/properties/db.properties</beans:value>
 				<beans:value>/WEB-INF/properties/option.properties</beans:value>
+				<beans:value>/WEB-INF/properties/error_message.properties</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="fileEncoding" value="UTF-8" />
