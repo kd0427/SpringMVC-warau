@@ -53,7 +53,7 @@
 		<div class="row">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
-				<div class="card shadow">
+				<div class="card shadow card2">
 					<div class="card-body">
 						<form:form action="${root }user/join_pro" method="post"
 							modelAttribute="joinUserVO">
