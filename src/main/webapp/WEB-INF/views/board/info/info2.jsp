@@ -9,39 +9,35 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Warau</title>
-
 </head>
 <body>
 
 	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
-<!-- 게시글 리스트 -->
-	<div class="container" style="margin-top: 100px">
-		<div class="card shadow">
-			<div class="card-body">
-				<h4 class="card-title">정보나눠요!</h4>
-				<table class="table table-hover" id='board_list'>
-					<thead>
-						<tr>
-							<th class="text-center d-none d-md-table-cell">글번호</th>
-							<th class="w-50">제목</th>
-							<th class="text-center d-none d-md-table-cell">작성자</th>
-							<th class="text-center d-none d-md-table-cell">작성날짜</th>
-						</tr>
-					</thead>
-					<tbody>
+
+	<!-- 게시글 리스트 -->
+				<!--나눔해요-->
+				<section class="share inner scroll-spy">
+					<div class="boardtitle">
+						<div class="text01">INFORMATION</div>
+						<div class="text02">정보나눔 게시판</div>
+					</div>
+					<div class="boardcontent back-to-position to-down">
 						<c:forEach var='infoList' items='${infoList }'>
-							<tr>
-								<td class="text-center d-none d-md-table-cell">${infoList.info_idx }</td>
-								<td><a
-									href='${root }board/info/read?info_idx=${infoList.info_idx}'>${infoList.info_title }</a></td>
-								<td class="text-center d-none d-md-table-cell">${infoList.info_writer }</td>
-								<td class="text-center d-none d-md-table-cell">${infoList.info_regdate}</td>
-
-							</tr>
+							<div class="item ">
+								<div class="shareImg">
+									<a href="${root }board/info/read?adopt_idx=${infoList.info_idx}"><img src="${root }upload/${infoList.info_img}" alt=""></a>
+								</div>
+								<div class="shareText">
+									<div>${infoList.info_title }</div>
+									<div>${infoList.info_writer }</div>
+								</div>
+							</div>
 						</c:forEach>
-					</tbody>
-
-				</table>
+					</div>
+				<div class="text-right">
+					<a href="${root }board/info/write" class="btn btn-primary">글쓰기</a>
+				</div>
+				</section>
 
 				<div class="d-none d-md-block">
 					<ul class="pagination justify-content-center">
@@ -54,7 +50,7 @@
 							</c:when>
 							<c:otherwise>
 								<li class="page-item "><a
-									href="${root }board/info?page=${pageVO.prevPage}"
+									href="${root }board/adopt?page=${pageVO.prevPage}"
 									class="page-link">이전</a></li>
 							</c:otherwise>
 						</c:choose>
@@ -66,12 +62,12 @@
 							<c:choose>
 								<c:when test="${p_idx == pageVO.currentPage }">
 									<li class="page-item active"><a
-										href="${root }board/info?page=${p_idx}" class="page-link">${p_idx}</a>
+										href="${root }board/adopt?page=${p_idx}" class="page-link">${p_idx}</a>
 									</li>
 								</c:when>
 								<c:otherwise>
 									<li class="page-item "><a
-										href="${root }board/info?page=${p_idx}" class="page-link">${p_idx}</a>
+										href="${root }board/adopt?page=${p_idx}" class="page-link">${p_idx}</a>
 									</li>
 								</c:otherwise>
 							</c:choose>
@@ -87,28 +83,19 @@
 							</c:when>
 							<c:otherwise>
 								<li class="page-item"><a
-									href="${root }board/info?page=${pageVO.nextPage}"
+									href="${root }board/adopt?page=${pageVO.nextPage}"
 									class="page-link">다음</a></li>
 							</c:otherwise>
 						</c:choose>
-
-
-
-
 					</ul>
+					
+			
+					
 				</div>
 
+			
 
 
-
-
-				<div class="text-right">
-					<a href="${root }board/info/write" class="btn btn-primary">글쓰기</a>
-				</div>
-
-			</div>
-		</div>
-	</div>
 
 	<!-- 푸터 -->
 
@@ -116,4 +103,9 @@
 
 </body>
 </html>
+
+
+
+
+
 
