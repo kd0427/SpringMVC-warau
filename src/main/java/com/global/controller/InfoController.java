@@ -56,14 +56,13 @@ public class InfoController {
 	}
 
 	@PostMapping("/info/write_pro")
-	public String write_pro(@Valid @ModelAttribute("writeInfoVO") InfoVO writeInfoVO, BindingResult result,
-			HttpServletRequest request) {
+	public String write_pro(@Valid @ModelAttribute("writeInfoVO") InfoVO writeInfoVO, BindingResult result) {
 
 		if (result.hasErrors()) {
 			return "board/info/write";
 		}
 
-		infoService.addContentInfo(writeInfoVO, request);
+		infoService.addContentInfo(writeInfoVO);
 
 		return "board/info/write_success";
 
