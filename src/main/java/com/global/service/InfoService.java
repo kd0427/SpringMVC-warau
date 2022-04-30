@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.global.dao.InfoDAO;
-import com.global.vo.AdoptVO;
 import com.global.vo.InfoVO;
 import com.global.vo.PageVO;
 import com.global.vo.UserVO;

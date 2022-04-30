@@ -16,6 +16,8 @@
 		insert into adopt_table(adopt_idx, adopt_title, adopt_content, adopt_regdate, adopt_img, adopt_writer)
 			values (adopt_seq.nextval, #{adopt_title}, #{adopt_content}, sysdate, #{adopt_img, jdbcType=VARCHAR},
 			#{adopt_writer})
+			
+			
 	]]>
 	</insert>
 	

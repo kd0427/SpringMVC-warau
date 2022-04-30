@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="${root }qna/checkbox2.css">
 <title>QnA</title>
 </head>
 <body>
@@ -16,68 +17,69 @@
 	<c:import url="/WEB-INF/views/include/top_menu.jsp"/>
 	
 	<!-- QnA 목록 -->
-	<div class="container" style="margin-top: 100px">
-		<div class="card shadow">
-			<div class="card-body">
-				<h4 class="card-title">궁금해요! 알려주세요!</h4>
-				<table class="table table-hover" id='QnaList'>
-				<ul class="qna">
+	
+		<ul class="qna">
             <li>
-                <label for="qna-1" value="${getNotice.notice_writer}"/>
                 <input type="checkbox" id="qna-1">
+                <label for="qna-1">Petroduce에 저희 아이의 사진이나 영상을 올려도 괜찮을까요?</label>
                 <div>
-                    <p value=""${getNotice.notice_content}"/></p>
+                    <p>물론입니다!:)<br>
+					<br>
+					Petroduce는 집사분들의 사랑스러운 아이들의 모습을 공개하는 장소입니다!<br>
+					그러니 아이들의 사랑스러운 모습들을 마음껏 보여주세요!<br>
+					물론 사진이나 영상이 없는 글도 많이 올려주세요!<br>
+					<br>
+					집사분들의 글이 또 다른 집사와 랜선집사, 그리고 저희 [WARAU] 관리자를 웃음짓게 한답니다!:)<br>
+					<br>
+					그러니 자유롭게 글을 올려주세요!</p>
+                </div>
+            </li>
+             <li>
+                <input type="checkbox" id="qna-2">
+                 <label for="qna-2">집사의 창고에서는 무엇이든 팔아도 되나요?</label>
+                <div>
+                    <p>집사분들이 구매하신 상품들을 무료나눔을 하거나 서로 합의하에 공유하시는 건 괜찮습니다!<br>
+					<br>
+					다만, 직접 만드신 수제상품의 경우, 특히 음식의 경우, 가급적 자제를 부탁드립니다.<br>
+					물론 정성으로 만드신 건 잘 알지만, 혹시 모를 불상사를 막기위함입니다.<br>
+					<br>
+					그 외의 경우는 제한없이 집사분들간의 합의하에 자유롭게 하시면 됩니다!:)<br>
+					<br>
+					그러니 자유롭게 가진 물건들을 다른 집사들에게도 공유해주세요!</p>
+                </div>
+            </li>
+            <li>
+                <input type="checkbox" id="qna-3">
+                <label for="qna-3">정보를 주세요에는 어떤 글을 올리면 되나요?</label>
+                <div>
+                    <p>"정보를 주세요" 게시판은 집사분들의 애완관련 정보를 공유하는 곳입니다.<br>
+					<br>
+					아이들의 관련 정보뿐만 아니라,<br>
+					애견 미용, 애견 훈련 같은 집사의 애완관련 활동이나<br>
+					어질리티나 훈련의 모습을 보여주시면 됩니다:)<br>
+					<br>
+					사랑스러운 아이들의 손! 훈련 모습도, 빵야! 모습도 모두 보여주세요!<br>
+					물론 멋지게 아이들은 미용중인 집사의 모습도 보여주세요!<br>
+					<br>
+				</div>
+            </li>
+            <li>
+                <input type="checkbox" id="qna-4">
+                 <label for="qna-4">adopt에서 다른 사이트와 연계해서 분양해도 되나요?</label>
+                <div>
+                    <p>안타깝지만, 저희 {WARAU}에서는 다른 업체와 입,분양의 협약을 맺고 있지 않습니다.<br>
+					또한 저희 [WARAU]내에서 타 사이트와의 연계분양은 제한되어 있습니다.<br>
+					<br>
+					개인적인 사정으로 더 이상 기를 수 없거나<br>
+					우리 아이기 예쁜 아이를 낳았는데 새로운 가족에게도 좋은 추억을 드리고 싶은 분들과<br>
+					새 가족과 좋은 추억을 만들고 싶은 분들을 위한 게시판입니다. <br>
+					<br>
+					그리고 개인적으로 보내시려는 분은 아이의 사진과 이름, 특징 등 간략하게 소개해주시면 됩니다!:) <br>
+					<br>
                 </div>
             </li>
         </ul>
-        
-        <div class="container" style="margin-top:100px">
-	<div class="row">
-		<div class="col-sm-3"></div>
-		<div class="col-sm-6">
-			<div class="card shadow">
-				<div class="card-body">
-					<div class="form-group">
-						<label for="board_writer_name">작성자</label>
-						<input type="text" id="board_writer_name" name="boar5d_writer_name" class="form-control" value="${readAdoptVO.adopt_writer}" disabled="disabled"/>
-					</div>
-					<div class="form-group">
-						<label for="board_date">작성날짜</label>
-						<input type="text" id="board_date" name="board_date" class="form-control" value="${readAdoptVO.adopt_regdate }" disabled="disabled"/>
-					</div>
-					<div class="form-group">
-						<label for="board_subject">제목</label>
-						<input type="text" id="board_subject" name="board_subject" class="form-control" value="${readAdoptVO.adopt_title }" disabled="disabled"/>
-					</div>
-					<div class="form-group">
-						<label for="board_content">내용</label>
-						<textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none" disabled="disabled">${readAdoptVO.adopt_content}</textarea>
-					</div>
-					<c:if test="${readAdoptVO.adopt_img != null }">
-						<div class="form-group">
-							<label for="board_file">첨부 이미지</label>
-							<img src="${root }upload/${readAdoptVO.adopt_img}" width="100%"/>						
-						</div>
-					</c:if>
-					<div class="form-group">
-						<div class="text-right">
-							<a href="${root }board/adopt" class="btn btn-primary">목록보기</a>
-							<a href="${root }board/modify" class="btn btn-info">수정하기</a>
-							<a href="${root }board/delete" class="btn btn-danger">삭제하기</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-3"></div>
-	</div>
-</div>
-				</table>
-			</div>
-		</div>
-	</div>
-
-
+       
 <!-- 바텀 -->
 	<c:import url="/WEB-INF/views/include/bottom_info.jsp"/>
 </body>

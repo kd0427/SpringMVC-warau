@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.global.service.ShareService;
+import com.global.vo.AdoptVO;
 import com.global.vo.ShareVO;
 import com.global.vo.UserVO;
 
@@ -72,15 +73,18 @@ public class ShareController {
 	@GetMapping("/share/read")
 	public String read(@RequestParam("share_idx") int share_idx,
 					   Model model) {
+		model.addAttribute("share_idx", share_idx);
 		
 		ShareVO readShareVO = shareService.getContentInfo(share_idx);
-		model.addAttribute("readShareVO",readShareVO);
-		
-		model.addAttribute("share_idx", share_idx);
+		model.addAttribute("readShareVO", readShareVO);
 		model.addAttribute("loginUserVO", loginUserVO);
+		
+		System.out.println("나와라");
 		
 		return "board/share/read";
 	}
+	
+	
 	
 	//글 삭제
 		@GetMapping("/share/delete")

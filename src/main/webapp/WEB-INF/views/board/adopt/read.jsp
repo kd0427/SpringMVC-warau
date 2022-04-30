@@ -50,6 +50,7 @@
 							<img src="${root }upload/${readAdoptVO.adopt_img}" width="100%"/>						
 						</div>
 					</c:if>
+					
 					<div class="form-group">
 						<div class="text-right">
 							<a href="${root }board/adopt" class="btn btn-primary">목록보기</a>

@@ -67,78 +67,41 @@
 				<div class="text01">BEST OF PET</div>
 				<div class="text02">Warau 최고의 인기스타 TOP4</div>
 			</div>
+			
 			<div class="content">
 				<ul>
-					<li><a href="#">
+					
+				<c:forEach var="obj" items="${p_list }">
+			
+						<li><a href="${root }board/petro/read?petro_idx=${obj.petro_idx}">
 							<div class="bestBox back-to-position to-down">
 								<div class="petimg">
-									<img src="${root }img/pet/best1.jpg" alt="">
+									<img src="${root }upload/${obj.petro_img}" alt="">
 								</div>
 								<div class="petText">
 									<div class="icon material-icons-outlined">
 										<span>favorite</span>commentsend
 									</div>
-									<div>좋아요 1235개</div>
-									<div class="id">codud0826 멍멍이랑 바다갔어요</div>
+									
+									<div class="id">${obj.petro_title }</div>
+									<div class="id">${obj.petro_writer }</div>
 								</div>
 							</div>
-					</a></li>
-
-					<li><a href="#">
-							<div class="bestBox back-to-position to-down">
-								<div class="petimg">
-									<img src="${root }img/pet/best2.jpg" alt="">
-								</div>
-								<div class="petText">
-									<div class="icon material-icons-outlined">
-										<span>favorite</span>commentsend
-									</div>
-									<div>좋아요 780개</div>
-									<div class="id">kd0427 개신남</div>
-								</div>
-							</div>
-					</a></li>
-
-					<li><a href="#">
-							<div class="bestBox back-to-position to-down">
-								<div class="petimg">
-									<img src="${root }img/pet/best3.jpg" alt="">
-								</div>
-								<div class="petText">
-									<div class="icon material-icons-outlined">
-										<span>favorite</span>commentsend
-									</div>
-									<div>좋아요 556개</div>
-									<div class="id">mina11 냐옹????</div>
-								</div>
-							</div>
-					</a></li>
-
-					<li><a href="#">
-							<div class="bestBox back-to-position to-down">
-								<div class="petimg">
-									<img src="${root }img/pet/best4.jpg" alt="">
-								</div>
-								<div class="petText">
-									<div class="icon material-icons-outlined">
-										<span>favorite</span>commentsend
-									</div>
-									<div>좋아요 456개</div>
-									<div class="id">haru123 토끼랑 산책</div>
-								</div>
-							</div>
-					</a></li>
+						</a></li>
+				</c:forEach>
+				
 				</ul>
 			</div>
-		</div>
-	</section>
-
+	</div>		
+</section>
 	<!-- 가족을 찾아요 -->
 	<section class="find inner scroll-spy">
 		<div class="title">
 			<div class="text01">FIND A FAMILY</div>
 			<div class="text02">가족을 구해요</div>
 		</div>
+		
+		
 		<div class="findfamily content back-to-position to-down">
 			<div class="swiper mySwiper2">
 				<div class="swiper-wrapper">
