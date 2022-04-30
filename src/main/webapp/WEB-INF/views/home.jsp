@@ -66,7 +66,7 @@
 		<div class="inner">
 			<div class="title">
 				<div class="text01">BEST OF PET</div>
-				<div class="text02">Warau 최고의 인기스타~ TOP4</div>
+				<div class="text02">Warau 최고의 인기스타 TOP4</div>
 			</div>
 
 			<div class="content">
