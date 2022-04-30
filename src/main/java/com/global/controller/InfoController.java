@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.global.service.InfoService;
+import com.global.vo.AdoptVO;
 import com.global.vo.InfoVO;
 import com.global.vo.PageVO;
 import com.global.vo.UserVO;
@@ -44,7 +45,7 @@ public class InfoController {
 		PageVO pageVO = infoService.infoWriteCnt(page);
 		model.addAttribute("pageVO", pageVO);
 		
-		return "board/info/info";
+		return "board/info/info2";
 	}
 
 	
@@ -70,12 +71,15 @@ public class InfoController {
 	//글 읽기
 
 	@GetMapping("/info/read")
-	public String read(@RequestParam("info_idx") int info_idx, Model model) {
-
+	public String read(@RequestParam("info_idx") int info_idx,
+					   Model model) {
+		
 		InfoVO readInfoVO = infoService.getContentInfo(info_idx);
-		model.addAttribute("readInfoVO", readInfoVO);
+		model.addAttribute("readInfoVO",readInfoVO);
+		
 		model.addAttribute("info_idx", info_idx);
-
+		model.addAttribute("loginUserVO", loginUserVO);
+		
 		return "board/info/read";
 	}
 
