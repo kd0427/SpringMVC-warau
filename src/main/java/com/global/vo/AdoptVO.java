@@ -1,11 +1,18 @@
 package com.global.vo;
 
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class AdoptVO {
 	private int adopt_idx;
+	
+	@NotBlank
 	private String adopt_title;
+	
+	@NotBlank
 	private String adopt_content;
+	
 	private String adopt_regdate;
 	private int adopt_like;
 	private int adopt_hit;

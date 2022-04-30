@@ -38,7 +38,7 @@
 				<beans:value>/WEB-INF/properties/error_message.properties</beans:value>
 			</beans:list>
 		</beans:property>
-		<beans:property name="fileEncoding" value="UTF-8" />
+		 <beans:property name="fileEncoding" value="UTF-8"/>
 	</beans:bean>
 
 	<beans:bean class="org.apache.commons.dbcp2.BasicDataSource"

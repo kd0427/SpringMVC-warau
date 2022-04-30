@@ -433,6 +433,7 @@ nav .main ul li ul li a:hover{
     align-content: space-around;
 }
 
+
 .share .content .item{
     width:23%;
     height:300px;
@@ -457,6 +458,44 @@ nav .main ul li ul li a:hover{
     
 }
 .share .content .item .shareText div{
+}
+
+.share .boardcontent{
+    width:100%;
+    height:1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.share .boardcontent .item{
+    width:23%;
+    height:300px;
+    justify-content: space-around;
+}
+
+.share .boardcontent .item .shareImg{
+    padding: 4%;
+    width:100%;
+    height: 80%;
+    
+}
+.share .boardcontent .item .shareImg img{
+    width:100%;
+    height: 100%;
+}
+
+.share .boardcontent .item .shareText{
+    padding-left: 4%;
+    width:100%;
+    height:20%;
+    
+}
+
+.boardtitle {
+   	margin-top:150px;
+    text-align: center;
 }
 
 
@@ -515,4 +554,11 @@ nav .main ul li ul li a:hover{
 .footer {
   text-align: center;
   border-top: 2px solid #ccc;
+}
+
+
+.col-sm-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    width:1400px;
 }

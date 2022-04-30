@@ -8,6 +8,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script defer src="${root }js/home.js"></script>
 <title>Warau</title>
 </head>
 <body>
@@ -69,10 +70,10 @@
 			</div>
 			<div class="content">
 				<ul>
-					<li><a href="#">
+					<li>
 							<div class="bestBox back-to-position to-down">
 								<div class="petimg">
-									<img src="${root }img/pet/best1.jpg" alt="">
+									<a href="#"><img src="${root }img/pet/best1.jpg" alt=""></a>
 								</div>
 								<div class="petText">
 									<div class="icon material-icons-outlined">
@@ -82,12 +83,12 @@
 									<div class="id">codud0826 멍멍이랑 바다갔어요</div>
 								</div>
 							</div>
-					</a></li>
+					</li>
 
-					<li><a href="#">
+					<li>
 							<div class="bestBox back-to-position to-down">
 								<div class="petimg">
-									<img src="${root }img/pet/best2.jpg" alt="">
+									<a href="#"><img src="${root }img/pet/best2.jpg" alt=""></a>
 								</div>
 								<div class="petText">
 									<div class="icon material-icons-outlined">
@@ -97,12 +98,12 @@
 									<div class="id">kd0427 개신남</div>
 								</div>
 							</div>
-					</a></li>
+					</li>
 
-					<li><a href="#">
+					<li>
 							<div class="bestBox back-to-position to-down">
 								<div class="petimg">
-									<img src="${root }img/pet/best3.jpg" alt="">
+									<a href="#"><img src="${root }img/pet/best3.jpg" alt=""></a>
 								</div>
 								<div class="petText">
 									<div class="icon material-icons-outlined">
@@ -112,12 +113,12 @@
 									<div class="id">mina11 냐옹????</div>
 								</div>
 							</div>
-					</a></li>
+					</li>
 
-					<li><a href="#">
+					<li>
 							<div class="bestBox back-to-position to-down">
 								<div class="petimg">
-									<img src="${root }img/pet/best4.jpg" alt="">
+									<a href="#"><img src="${root }img/pet/best4.jpg" alt=""></a>
 								</div>
 								<div class="petText">
 									<div class="icon material-icons-outlined">
@@ -127,7 +128,7 @@
 									<div class="id">haru123 토끼랑 산책</div>
 								</div>
 							</div>
-					</a></li>
+					</li>
 				</ul>
 			</div>
 		</div>
