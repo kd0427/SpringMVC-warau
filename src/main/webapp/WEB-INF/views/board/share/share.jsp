@@ -8,19 +8,17 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 <title>Warau</title>
 </head>
 <body>
 
-<!-- top menu -->
 	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
 
 	<!-- 게시글 리스트 -->
 	<div class="container" style="margin-top: 100px">
 		<div class="card shadow">
 			<div class="card-body">
-				<h4 class="card-title">나눔게시판입니당</h4>
+				<h4 class="card-title">분양 게시판</h4>
 				<table class="table table-hover" id='board_list'>
 					<thead>
 						<tr>
@@ -31,45 +29,78 @@
 						</tr>
 					</thead>
 					<tbody>
-					
-					<c:forEach var="sh" items="${shareList }">
-					
-						<tr>
-							<td class="text-center d-none d-md-table-cell">${sh.share_idx }</td>
-							<td><a href='${root }board/share/read?share_idx=${sh.share_title}'>${sh.share_title }</a></td>
-							<td class="text-center d-none d-md-table-cell">${sh.share_writer }</td>
-							<td class="text-center d-none d-md-table-cell">${sh.share_regdate }</td>
+						<c:forEach var='shareList' items='${shareList }'>
+							<tr>
+								<td class="text-center d-none d-md-table-cell">${shareList.share_idx }</td>
+								<td><a
+									href='${root }board/share/read?share_idx=${shareList.share_idx}'>${shareList.share_title }</a></td>
+								<td class="text-center d-none d-md-table-cell">${shareList.share_writer }</td>
+								<td class="text-center d-none d-md-table-cell">${shareList.share_regdate}</td>
 
-						</tr>
-					
-					</c:forEach>
-						
+							</tr>
+						</c:forEach>
 					</tbody>
+
 				</table>
 
 				<div class="d-none d-md-block">
 					<ul class="pagination justify-content-center">
-						<li class="page-item"><a href="#" class="page-link">이전</a></li>
-						<li class="page-item"><a href="#" class="page-link">1</a></li>
-						<li class="page-item"><a href="#" class="page-link">2</a></li>
-						<li class="page-item"><a href="#" class="page-link">3</a></li>
-						<li class="page-item"><a href="#" class="page-link">4</a></li>
-						<li class="page-item"><a href="#" class="page-link">5</a></li>
-						<li class="page-item"><a href="#" class="page-link">6</a></li>
-						<li class="page-item"><a href="#" class="page-link">7</a></li>
-						<li class="page-item"><a href="#" class="page-link">8</a></li>
-						<li class="page-item"><a href="#" class="page-link">9</a></li>
-						<li class="page-item"><a href="#" class="page-link">10</a></li>
-						<li class="page-item"><a href="#" class="page-link">다음</a></li>
+
+						<!-- 이전버튼 -->
+						<c:choose>
+							<c:when test="${pageVO.prevPage <= 0 }">
+								<li class="page-item disabled"><a href="#"
+									class="page-link">이전</a></li>
+							</c:when>
+							<c:otherwise>
+								<li class="page-item "><a
+									href="${root }board/share?page=${pageVO.prevPage}"
+									class="page-link">이전</a></li>
+							</c:otherwise>
+						</c:choose>
+
+
+
+						<!-- 페이지 버튼 -->
+						<c:forEach var="p_idx" begin="${pageVO.min }" end="${pageVO.max }">
+							<c:choose>
+								<c:when test="${p_idx == pageVO.currentPage }">
+									<li class="page-item active"><a
+										href="${root }board/share?page=${p_idx}" class="page-link">${p_idx}</a>
+									</li>
+								</c:when>
+								<c:otherwise>
+									<li class="page-item "><a
+										href="${root }board/share?page=${p_idx}" class="page-link">${p_idx}</a>
+									</li>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+
+
+
+						<!-- 다음 버튼 -->
+						<c:choose>
+							<c:when test="${pageVO.max >= pageVO.pageCnt }">
+								<li class="page-item disabled"><a href="#"
+									class="page-link">다음</a></li>
+							</c:when>
+							<c:otherwise>
+								<li class="page-item"><a
+									href="${root }board/share?page=${pageVO.nextPage}"
+									class="page-link">다음</a></li>
+							</c:otherwise>
+						</c:choose>
+
+
+
+
 					</ul>
 				</div>
 
-				<div class="d-block d-md-none">
-					<ul class="pagination justify-content-center">
-						<li class="page-item"><a href="#" class="page-link">이전</a></li>
-						<li class="page-item"><a href="#" class="page-link">다음</a></li>
-					</ul>
-				</div>
+
+
+
 
 				<div class="text-right">
 					<a href="${root }board/share/write" class="btn btn-primary">글쓰기</a>
@@ -80,11 +111,11 @@
 	</div>
 
 	<!-- 푸터 -->
+
 	<c:import url="/WEB-INF/views/include/bottom_info.jsp"></c:import>
 
 </body>
 </html>
-
 
 
 
