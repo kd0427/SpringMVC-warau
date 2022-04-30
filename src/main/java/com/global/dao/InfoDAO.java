@@ -33,14 +33,14 @@ public class InfoDAO {
 	}
 
 	// 글 삭제
-	public void infoWriteDelete(int info_idx) {
-		sqlSessionTemplate.delete("info.infoWriteDelete", info_idx);
-	}
+		public void infoWriteDelete(int info_idx) {
+			sqlSessionTemplate.delete("info.infoWriteDelete", info_idx);
+		}
 
-	// 글 수정
-	public void infoModifyInfo(InfoVO infoModifyVO) {
-		sqlSessionTemplate.update("info.infoModifyInfo", infoModifyVO);
-	}
+		// 글 수정
+		public void infoModifyInfo(InfoVO infoModifyVO) {
+			sqlSessionTemplate.update("info.infoModifyInfo", infoModifyVO);
+		}
 	// 페이징
 
 	public int infoWriteCnt() {

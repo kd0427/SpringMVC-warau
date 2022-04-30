@@ -82,13 +82,15 @@ public class InfoController {
 
 	//글 삭제
 	@GetMapping("/info/delete")
-	public String delete(@RequestParam("info_idx") int info_idx, Model model) {
-
+	public String delete(@RequestParam("info_idx") int info_idx,
+						Model model) {
+		
 		infoService.infoWriteDelete(info_idx);
 		model.addAttribute("info_idx", info_idx);
-
-		return "board/adopt/delete";
+		
+		return "board/info/delete";
 	}
+	
 
 	//글 수정
 	@GetMapping("/info/modify")

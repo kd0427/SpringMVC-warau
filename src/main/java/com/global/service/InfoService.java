@@ -89,6 +89,7 @@ public class InfoService {
 	}
 	//글 삭제
 	public void infoWriteDelete(int info_idx) {
+		
 		infoDAO.infoWriteDelete(info_idx);
 	}
 	//글 수정
