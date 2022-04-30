@@ -13,9 +13,13 @@
 	<!-- 글쓰기 -->
 	<insert id="write" parameterType="com.global.vo.ShareVO">
 	<![CDATA[
-		insert into share_table(share_idx, share_title, share_content, share_regdate, share_img, share_writer)
-			values (share_seq.nextval, 00#{share_title}, #{share_content}, sysdate, #{share_img, jdbcType=VARCHAR},
-			#{share_writer})
+		
+		insert into share_table(share_idx, share_title, share_content, 
+		share_img, share_writer, share_regdate)	
+		values (share_seq.nextval, #{share_title}, #{share_content}, #{share_img, jdbcType=VARCHAR}, 
+		#{share_writer}, sysdate)
+		
+		
 	]]>
 	</insert>
 	
@@ -26,7 +30,29 @@
 			to_char(share_regdate, 'YYYY-MM-DD') as share_regdate,
 			share_title, share_content, share_img
 			from share_table
-			where share_idx =#{share_idx}
+			where share_idx = #{share_idx}
 		]]>
+	</select>
+	<!-- 글 삭제 -->
+	<delete id="shareWriteDelete" parameterType="java.lang.Integer" >
+		<![CDATA[
+		delete from share_table where share_idx = #{share_idx}
+		]]>
+	</delete>
+	<!-- 글 수정 -->
+	<update id="shareModifyInfo" parameterType="com.global.vo.ShareVO">
+		<![CDATA[
+			update share_table
+				set share_title = #{share_title}, share_content = #{share_content},
+				share_img = #{share_img, jdbcType=VARCHAR}
+				where share_idx = #{share_idx}
+		]]>
+	</update>
+	
+	<!-- 페이징 -->
+	<select id="shareWriteCnt" resultType="java.lang.Integer" >
+			<![CDATA[
+				select count(*) from share_table
+			]]>
 	</select>
 </mapper>

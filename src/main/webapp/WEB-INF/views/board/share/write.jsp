@@ -36,8 +36,8 @@
 								<form:errors path="share_content" style='color:red'/>
 							</div>
 							<div class="form-group">
-								<form:label path="upload_file">첨부 이미지</form:label>
-								<form:input path="upload_file" type='file' class="form-control" accept="image/*"/>
+								<form:label path="upload_img">첨부 이미지</form:label>
+								<form:input path="upload_img" type='file' class="form-control" accept="image/*"/>
 							</div>
 							<div class="form-group">
 								<div class="text-right">
