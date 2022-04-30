@@ -8,6 +8,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script defer src="${root }js/home.js"></script>
 <title>Warau</title>
 </head>
 <body>
@@ -70,13 +71,21 @@
 			
 			<div class="content">
 				<ul>
+<<<<<<< HEAD
+					<li>
+=======
 					
 				<c:forEach var="obj" items="${p_list }">
 			
 						<li><a href="${root }board/petro/read?petro_idx=${obj.petro_idx}">
+>>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
 							<div class="bestBox back-to-position to-down">
 								<div class="petimg">
+<<<<<<< HEAD
+									<a href="#"><img src="${root }img/pet/best1.jpg" alt=""></a>
+=======
 									<img src="${root }upload/${obj.petro_img}" alt="">
+>>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
 								</div>
 								<div class="petText">
 									<div class="icon material-icons-outlined">
@@ -87,9 +96,58 @@
 									<div class="id">${obj.petro_writer }</div>
 								</div>
 							</div>
+<<<<<<< HEAD
+					</li>
+
+					<li>
+							<div class="bestBox back-to-position to-down">
+								<div class="petimg">
+									<a href="#"><img src="${root }img/pet/best2.jpg" alt=""></a>
+								</div>
+								<div class="petText">
+									<div class="icon material-icons-outlined">
+										<span>favorite</span>commentsend
+									</div>
+									<div>좋아요 780개</div>
+									<div class="id">kd0427 개신남</div>
+								</div>
+							</div>
+					</li>
+
+					<li>
+							<div class="bestBox back-to-position to-down">
+								<div class="petimg">
+									<a href="#"><img src="${root }img/pet/best3.jpg" alt=""></a>
+								</div>
+								<div class="petText">
+									<div class="icon material-icons-outlined">
+										<span>favorite</span>commentsend
+									</div>
+									<div>좋아요 556개</div>
+									<div class="id">mina11 냐옹????</div>
+								</div>
+							</div>
+					</li>
+
+					<li>
+							<div class="bestBox back-to-position to-down">
+								<div class="petimg">
+									<a href="#"><img src="${root }img/pet/best4.jpg" alt=""></a>
+								</div>
+								<div class="petText">
+									<div class="icon material-icons-outlined">
+										<span>favorite</span>commentsend
+									</div>
+									<div>좋아요 456개</div>
+									<div class="id">haru123 토끼랑 산책</div>
+								</div>
+							</div>
+					</li>
+=======
 						</a></li>
 				</c:forEach>
 				
+>>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
 				</ul>
 			</div>
 	</div>		

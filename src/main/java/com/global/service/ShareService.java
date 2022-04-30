@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,8 +14,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.global.dao.ShareDAO;
+<<<<<<< HEAD
+=======
 import com.global.vo.AdoptVO;
 import com.global.vo.PageVO;
+>>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
 import com.global.vo.ShareVO;
 import com.global.vo.UserVO;
 

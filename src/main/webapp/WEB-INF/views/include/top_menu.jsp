@@ -9,17 +9,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Warau</title>
-<!-- sns 미리보기같은거 -->
+<!-- sns 미리보기같은거 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Waraw" />
 <meta property="og:title" content="와라우 입니다." />
 <meta property="og:description" content="반려동물 커뮤니티 입니다." />
 <meta property="og:image" content="./Shinchan.png" />
 <meta property="og:url" content="" />
+-->
 
 <!-- 구글폰트 적용 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" >
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;900&display=swap"
 	rel="stylesheet">
@@ -51,10 +52,13 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet"> 
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+	
 <script defer src="${root }js/scripts.js"></script>
 
 <link rel="stylesheet" href="${root }css/master.css">
-
 </head>
 <body>
 
@@ -83,7 +87,7 @@
 						</ul></li>
 
 					<li><a href="${root }board/notice">NOTICE</a></li>
-					<li><a href="${root }board/qna">Q&A</a></li>
+					<li><a href="${root }board/qna">QnA</a></li>
 					<li><a href="#">COMPANY</a></li>
 				</ul>
 			</div>
