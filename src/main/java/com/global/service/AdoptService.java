@@ -65,18 +65,18 @@ public class AdoptService {
 		
 			 
 			//글쓰기 
-			public void adoptAddWrite(AdoptVO adoptWriteVO) {
+			public void adoptAddWrite(AdoptVO writeAdoptVO) {
 			
-			MultipartFile upload_file = adoptWriteVO.getUpload_img(); //사용자가 요청한 파일
+			MultipartFile upload_file = writeAdoptVO.getUpload_img(); //사용자가 요청한 파일
 			
 			if(upload_file.getSize() > 0) { //파일이 있으면
 				String file_name = saveUplaodFile(upload_file); // 현재시간 + 파일이름 불러주는 메소드 호출
-				adoptWriteVO.setAdopt_img(file_name); //(디비이름)img에도 업로드한 이미지의 이름을 
+				writeAdoptVO.setAdopt_img(file_name); //(디비이름)img에도 업로드한 이미지의 이름을 
 			}
 			
-			adoptWriteVO.setAdopt_writer(loginUserVO.getUser_id()); //작성자가 누군지 알려고 하는 거
+			writeAdoptVO.setAdopt_writer(loginUserVO.getUser_id()); //작성자가 누군지 알려고 하는 거
 			
-			adoptDAO.write(adoptWriteVO);
+			adoptDAO.write(writeAdoptVO);
 		}
 	
 	///글읽기

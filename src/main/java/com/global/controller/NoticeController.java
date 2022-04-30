@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.global.service.NoticeService;
-import com.global.vo.AdoptVO;
 import com.global.vo.NoticeVO;
 
 @Controller

@@ -48,7 +48,7 @@ public class AdoptController {
 		PageVO pageVO = adoptService.adoptWriteCnt(page);
 		model.addAttribute("pageVO", pageVO);
 		
-		return "board/adopt/adopt";
+		return "board/adopt/adopt2";
 	}
 	
 	///

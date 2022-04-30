@@ -40,10 +40,6 @@
 						<label for="board_subject">제목</label>
 						<input type="text" id="board_subject" name="board_subject" class="form-control" value="${readAdoptVO.adopt_title }" disabled="disabled"/>
 					</div>
-					<div class="form-group">
-						<label for="board_content">내용</label>
-						<textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none" disabled="disabled">${readAdoptVO.adopt_content}</textarea>
-					</div>
 					<c:if test="${readAdoptVO.adopt_img != null }">
 						<div class="form-group">
 							<label for="board_file">첨부 이미지</label>
@@ -51,6 +47,11 @@
 						</div>
 					</c:if>
 					
+					<div class="form-group">
+						<label for="board_content">내용</label>
+						<textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none" disabled="disabled">${readAdoptVO.adopt_content}</textarea>
+					</div>
+
 					<div class="form-group">
 						<div class="text-right">
 							<a href="${root }board/adopt" class="btn btn-primary">목록보기</a>

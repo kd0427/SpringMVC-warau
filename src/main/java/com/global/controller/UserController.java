@@ -36,14 +36,14 @@ public class UserController {
 							 Model model) {
 		
 		model.addAttribute("fail",fail);
-		return "user/login";
+		return "user/login2";
 	}
 	
 	@PostMapping("/login_pro")
 	public String login_pro(@Valid @ModelAttribute("tempLoginUserVO") UserVO tempLoginUserVO, BindingResult result) {
 		
 		if(result.hasErrors()) {
-			return "/user/login";
+			return "/user/login2";
 		}
 		
 		userService.getLoginUserInfo(tempLoginUserVO);

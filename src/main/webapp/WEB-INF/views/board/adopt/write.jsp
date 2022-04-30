@@ -31,14 +31,15 @@
 								<form:errors path="adopt_title" style='color:red'/>
 							</div>
 							<div class="form-group">
+								<form:label path="upload_img">첨부 이미지</form:label>
+								<form:input path="upload_img" type='file' class="form-control" accept="image/*"/>
+							</div>
+							<div class="form-group">
 								<form:label path="adopt_content">내용</form:label>
 								<form:textarea path="adopt_content" class="form-control" rows="10" style="resize: none"/>
 								<form:errors path="adopt_content" style='color:red'/>
 							</div>
-							<div class="form-group">
-								<form:label path="upload_img">첨부 이미지</form:label>
-								<form:input path="upload_img" type='file' class="form-control" accept="image/*"/>
-							</div>
+
 							<div class="form-group">
 								<div class="text-right">
 									<form:button class="btn btn-primary">작성하기</form:button>

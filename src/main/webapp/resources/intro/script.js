@@ -38,7 +38,7 @@ gsap.to(".wheel", {
 	ease: "none",
 	duration: images.length,
 	scrollTrigger: {
-		start: 0,
+		start: 360,
 		end: "max",
 		scrub: 1,
 		snap: 1 / images.length,
