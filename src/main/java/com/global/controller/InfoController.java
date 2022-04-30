@@ -110,7 +110,7 @@ public class InfoController {
 		infoModifyVO.setInfo_img(infoTempModifyVO.getInfo_img());
 		infoModifyVO.setInfo_idx(info_idx);
 		
-		System.out.println("dd");
+	
 		return "board/info/modify";
 	}
 
