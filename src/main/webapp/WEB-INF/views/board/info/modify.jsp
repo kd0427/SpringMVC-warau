@@ -28,7 +28,7 @@
 			<div class="card shadow">
 				<div class="card-body">
 				
-				<form:form action='${root}/board/info/modify_pro' method="info" modelAttribute="infoModifyVO" enctype="multipart/form-data">
+				<form:form action='${root}/board/info/modify_pro' method="post" modelAttribute="infoModifyVO" enctype="multipart/form-data">
 					<form:hidden path="info_idx"/>	
 						<div class="form-group">
 							
