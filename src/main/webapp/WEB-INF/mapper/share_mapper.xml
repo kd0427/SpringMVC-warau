@@ -13,9 +13,13 @@
 	<!-- 글쓰기 -->
 	<insert id="write" parameterType="com.global.vo.ShareVO">
 	<![CDATA[
-		insert into share_table(share_idx, share_title, share_content, share_regdate, share_img, share_writer)
-			values (share_seq.nextval, 00#{share_title}, #{share_content}, sysdate, #{share_img, jdbcType=VARCHAR},
-			#{share_writer})
+		
+		insert into share_table(share_idx, share_title, share_content, 
+		share_img, share_writer, share_regdate)	
+		values (share_seq.nextval, #{share_title}, #{share_content}, #{share_img, jdbcType=VARCHAR}, 
+		#{share_writer}, sysdate)
+		
+		
 	]]>
 	</insert>
 	
@@ -26,7 +30,7 @@
 			to_char(share_regdate, 'YYYY-MM-DD') as share_regdate,
 			share_title, share_content, share_img
 			from share_table
-			where share_idx =#{share_idx}
+			where share_idx = #{share_idx}
 		]]>
 	</select>
 </mapper>

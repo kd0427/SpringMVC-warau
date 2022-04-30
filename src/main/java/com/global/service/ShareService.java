@@ -38,18 +38,18 @@ public class ShareService {
 	
 	//파일 경로 설정 , 파일이름 변경 , 파일저장
 	private String saveUploadFile(MultipartFile upload_file) {
-		String root_path = servletContext.getRealPath("/resources/upload/");
+		String path = servletContext.getRealPath("/resources/upload");
 		String file_name = System.currentTimeMillis() + "_" + upload_file.getOriginalFilename();
 		// 사용자가 보낸 파일 이름앞에 현재시간을 달아준다.
 
 		try {
-			upload_file.transferTo(new File(root_path + file_name));
 
-			System.out.println(root_path );
-		} catch (Exception e) {
+			upload_file.transferTo(new File(path + "/" + file_name)); //주입받은 업로드
+		} catch(Exception e) {
+			
 			e.printStackTrace();
 		}
-
+		
 		return file_name;
 	}
 	

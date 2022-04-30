@@ -22,7 +22,7 @@ import com.global.vo.ShareVO;
 		
 		//글쓰기
 		public void write(ShareVO writeShareVO) {
-			sqlSessionTemplate.insert("share.write",writeShareVO);
+			sqlSessionTemplate.insert("share.write", writeShareVO);
 		}
 		//글읽기
 		public ShareVO getContentInfo(int share_idx) {

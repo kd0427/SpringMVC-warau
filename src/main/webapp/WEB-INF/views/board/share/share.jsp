@@ -36,7 +36,7 @@
 					
 						<tr>
 							<td class="text-center d-none d-md-table-cell">${sh.share_idx }</td>
-							<td><a href='${root }board/share/read?share_idx=${sh.share_title}'>${sh.share_title }</a></td>
+							<td><a href='${root }board/share/read?share_idx=${sh.share_idx}'>${sh.share_title }</a></td>
 							<td class="text-center d-none d-md-table-cell">${sh.share_writer }</td>
 							<td class="text-center d-none d-md-table-cell">${sh.share_regdate }</td>
 

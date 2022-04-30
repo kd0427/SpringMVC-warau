@@ -1,12 +1,22 @@
 package com.global.vo;
 
 
-	import org.springframework.web.multipart.MultipartFile;
+	import javax.validation.constraints.NotBlank;
+
+import org.springframework.web.multipart.MultipartFile;
 
 	public class ShareVO {
+		
+		
 		private int share_idx;
+		
+		@NotBlank
 		private String share_title;
+		
+		@NotBlank
 		private String share_content;
+		
+		
 		private String share_regdate;
 		private int share_like;
 		private int share_hit;
