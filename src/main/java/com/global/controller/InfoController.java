@@ -2,10 +2,12 @@ package com.global.controller;
 
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,8 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.global.service.InfoService;
-
 import com.global.vo.InfoVO;
+import com.global.vo.PageVO;
+import com.global.vo.UserVO;
 
 @Controller
 @RequestMapping("/board")
@@ -25,18 +28,26 @@ public class InfoController {
 
 	@Autowired
 	private InfoService infoService;
-
+	@Resource(name="loginUserVO")
+	@Lazy
+	private UserVO loginUserVO;
+	
 	@GetMapping("/info")
-	public String info(Model model) {
+	public String info(@RequestParam(value="page", defaultValue = "1") int page,
+						Model model) {
 
-		List<InfoVO> infoList = infoService.getList();
-
-		model.addAttribute("infoList", infoList);
-
+		List<InfoVO> infoList = infoService.getList(page);
+		model.addAttribute("infoList",infoList);
 		System.out.println(infoList);
-
+		
+		//페이징
+		PageVO pageVO = infoService.infoWriteCnt(page);
+		model.addAttribute("pageVO", pageVO);
+		
 		return "board/info/info";
 	}
+
+	
 
 	@GetMapping("/info/write")
 	public String write(@ModelAttribute("writeInfoVO") InfoVO writeInfoVO) {
@@ -57,6 +68,7 @@ public class InfoController {
 		return "board/info/write_success";
 
 	}
+	//글 읽기
 
 	@GetMapping("/info/read")
 	public String read(@RequestParam("info_idx") int info_idx, Model model) {
@@ -68,17 +80,19 @@ public class InfoController {
 		return "board/info/read";
 	}
 
-//글 삭제
+	//글 삭제
 	@GetMapping("/info/delete")
-	public String delete(@RequestParam("info_idx") int info_idx, Model model) {
-
+	public String delete(@RequestParam("info_idx") int info_idx,
+						Model model) {
+		
 		infoService.infoWriteDelete(info_idx);
 		model.addAttribute("info_idx", info_idx);
-
-		return "board/adopt/delete";
+		
+		return "board/info/delete";
 	}
+	
 
-//글 수정
+	//글 수정
 	@GetMapping("/info/modify")
 	public String modify(@RequestParam("info_idx") int info_idx, @ModelAttribute("infoModifyVO") InfoVO infoModifyVO,
 			Model model) {
@@ -95,7 +109,8 @@ public class InfoController {
 		infoModifyVO.setInfo_content(infoTempModifyVO.getInfo_content());
 		infoModifyVO.setInfo_img(infoTempModifyVO.getInfo_img());
 		infoModifyVO.setInfo_idx(info_idx);
-
+		
+	
 		return "board/info/modify";
 	}
 
@@ -112,7 +127,7 @@ public class InfoController {
 		return "board/info/modify_success";
 	}
 
-//작성 권한 처리
+	//작성 권한 처리
 	@GetMapping("/info/not_writer")
 	public String not_writer() {
 

@@ -7,14 +7,16 @@ import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.global.dao.InfoDAO;
-
 import com.global.vo.InfoVO;
+import com.global.vo.PageVO;
 import com.global.vo.UserVO;
 
 @Service
@@ -23,15 +25,22 @@ public class InfoService {
 	@Autowired
 	private InfoDAO infoDAO;
 	
+	@Value("${page.listcnt}")
+	private int page_listcnt;
 	
+	@Value("${page.paginationcnt}")
+	private int page_paginationcnt;
 	
 	@Resource(name="loginUserVO")
 	@Lazy
 	private UserVO loginUserVO;
 	
 	//리스트 가져오기
-	public List<InfoVO> getList(){
-		return infoDAO.getList();
+	public List<InfoVO> getList(int page){
+		
+		int start =(page-1)* page_listcnt;
+		RowBounds rowbounds = new RowBounds(start, page_listcnt);
+		return infoDAO.getList(rowbounds);
 	}
 
 	//글쓰기
@@ -79,6 +88,7 @@ public class InfoService {
 	}
 	//글 삭제
 	public void infoWriteDelete(int info_idx) {
+		
 		infoDAO.infoWriteDelete(info_idx);
 	}
 	//글 수정
@@ -94,7 +104,16 @@ public class InfoService {
 		infoDAO.infoModifyInfo(infoModifyVO);
 	}
 
+	//페이징
+	
+		public PageVO infoWriteCnt(int currentPage) {
 		
-	}
-
+		int content_cnt = infoDAO.infoWriteCnt();
+		
+		PageVO pageVO = new PageVO(content_cnt, currentPage, page_listcnt, page_paginationcnt);
+		
+		return pageVO;
+		
+		}
+}
 	

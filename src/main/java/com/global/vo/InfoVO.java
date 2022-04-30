@@ -1,10 +1,15 @@
 package com.global.vo;
 
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class InfoVO {
 	private int info_idx;
+	
+	@NotBlank
 	private String info_title;
+	@NotBlank
 	private String info_content;
 	private String info_regdate;
 	private int info_like;
