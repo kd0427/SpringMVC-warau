@@ -39,4 +39,11 @@ public class AdoptDAO {
 	public void adoptModifyInfo(AdoptVO adoptModifyVO) {
 		sqlSessionTemplate.update("adopt.adoptModifyInfo", adoptModifyVO);
 	}
+	
+	// 페이징
+	
+		public int adoptWriteCnt() {
+			return sqlSessionTemplate.selectOne("adopt.adoptWriteCnt");
+		}
+	
 }

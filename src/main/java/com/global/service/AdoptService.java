@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.global.dao.AdoptDAO;
 import com.global.vo.AdoptVO;
+import com.global.vo.PageVO;
 import com.global.vo.UserVO;
 
 @Service
@@ -29,6 +30,9 @@ public class AdoptService {
 	@Value("${page.listcnt}")
 	private int page_listcnt;
 	
+	@Value("${page.paginationcnt}")
+	private int page_paginationcnt;
+	
 	@Resource(name="loginUserVO")
 	@Lazy
 	private UserVO loginUserVO;
@@ -38,7 +42,7 @@ public class AdoptService {
 	public List<AdoptVO> getList(int page){
 		
 		int start =(page-1)* page_listcnt;
-		RowBounds rowbounds = new RowBounds(0, 5);
+		RowBounds rowbounds = new RowBounds(start, page_listcnt);
 		return adoptDAO.getList(rowbounds);
 	}
 	
@@ -98,6 +102,16 @@ public class AdoptService {
 				
 				adoptDAO.adoptModifyInfo(adoptModifyVO);
 			}
-
+			
+			//페이징
+			
+			public PageVO adoptWriteCnt(int currentPage) {
+				
+				int content_cnt = adoptDAO.adoptWriteCnt();
+				
+				PageVO pageVO = new PageVO(content_cnt, currentPage, page_listcnt, page_paginationcnt);
+				
+				return pageVO;
+			}
 	
 }
