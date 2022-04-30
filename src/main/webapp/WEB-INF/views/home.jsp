@@ -68,98 +68,40 @@
 				<div class="text01">BEST OF PET</div>
 				<div class="text02">Warau 최고의 인기스타 TOP4</div>
 			</div>
-			
+
 			<div class="content">
 				<ul>
-<<<<<<< HEAD
-					<li>
-=======
-					
-				<c:forEach var="obj" items="${p_list }">
-			
-						<li><a href="${root }board/petro/read?petro_idx=${obj.petro_idx}">
->>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
+					<c:forEach var="obj" items="${p_list }">
+						<li>
 							<div class="bestBox back-to-position to-down">
 								<div class="petimg">
-<<<<<<< HEAD
-									<a href="#"><img src="${root }img/pet/best1.jpg" alt=""></a>
-=======
-									<img src="${root }upload/${obj.petro_img}" alt="">
->>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
+
+									<a href="${root }board/petro/read?petro_idx=${obj.petro_idx}"><img
+										src="${root }upload/${obj.petro_img}" alt=""></a> 
 								</div>
 								<div class="petText">
 									<div class="icon material-icons-outlined">
 										<span>favorite</span>commentsend
 									</div>
-									
+
 									<div class="id">${obj.petro_title }</div>
 									<div class="id">${obj.petro_writer }</div>
 								</div>
 							</div>
-<<<<<<< HEAD
-					</li>
-
-					<li>
-							<div class="bestBox back-to-position to-down">
-								<div class="petimg">
-									<a href="#"><img src="${root }img/pet/best2.jpg" alt=""></a>
-								</div>
-								<div class="petText">
-									<div class="icon material-icons-outlined">
-										<span>favorite</span>commentsend
-									</div>
-									<div>좋아요 780개</div>
-									<div class="id">kd0427 개신남</div>
-								</div>
-							</div>
-					</li>
-
-					<li>
-							<div class="bestBox back-to-position to-down">
-								<div class="petimg">
-									<a href="#"><img src="${root }img/pet/best3.jpg" alt=""></a>
-								</div>
-								<div class="petText">
-									<div class="icon material-icons-outlined">
-										<span>favorite</span>commentsend
-									</div>
-									<div>좋아요 556개</div>
-									<div class="id">mina11 냐옹????</div>
-								</div>
-							</div>
-					</li>
-
-					<li>
-							<div class="bestBox back-to-position to-down">
-								<div class="petimg">
-									<a href="#"><img src="${root }img/pet/best4.jpg" alt=""></a>
-								</div>
-								<div class="petText">
-									<div class="icon material-icons-outlined">
-										<span>favorite</span>commentsend
-									</div>
-									<div>좋아요 456개</div>
-									<div class="id">haru123 토끼랑 산책</div>
-								</div>
-							</div>
-					</li>
-=======
-						</a></li>
-				</c:forEach>
-				
->>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
+						</li>
+					</c:forEach>
 				</ul>
 			</div>
-	</div>		
-</section>
+		</div>
+	</section>
 	<!-- 가족을 찾아요 -->
 	<section class="find inner scroll-spy">
 		<div class="title">
 			<div class="text01">FIND A FAMILY</div>
 			<div class="text02">가족을 구해요</div>
 		</div>
-		
-		
+
+
 		<div class="findfamily content back-to-position to-down">
 			<div class="swiper mySwiper2">
 				<div class="swiper-wrapper">
@@ -241,9 +183,9 @@
 			<div class="text02">무료나눔 해요</div>
 		</div>
 		<div class="content back-to-position to-down">
-			
+
 			<div class="item ">
-			
+
 				<div class="shareImg">
 					<a href="#"><img src="${root }img/share/share1.jpg" alt=""></a>
 				</div>
@@ -251,10 +193,10 @@
 					<div>강아지 집이에용</div>
 					<div>kd0427</div>
 				</div>
-				
+
 			</div>
-			
-	
+
+
 			<div class="item">
 				<div class="shareImg">
 					<a href="#"><img src="${root }img/share/share2.jpg" alt=""></a>
