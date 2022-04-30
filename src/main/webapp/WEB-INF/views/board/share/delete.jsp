@@ -6,7 +6,7 @@
 <script>
 	
 	alert("삭제되었습니다.")
-	location.href="${root}board/share0"
+	location.href="${root}board/share"
 
 
 </script>

@@ -54,7 +54,7 @@
 							</c:when>
 							<c:otherwise>
 								<li class="page-item "><a
-									href="${root }board/adopt?page=${pageVO.prevPage}"
+									href="${root }board/info?page=${pageVO.prevPage}"
 									class="page-link">이전</a></li>
 							</c:otherwise>
 						</c:choose>

@@ -43,6 +43,7 @@ public class PetroController {
 		List<PetroVO> petroContentList = petroService.getPetroList(page);
 		model.addAttribute("petroContentList", petroContentList);
 		
+		
 		//페이징
 		PageVO pageVO = petroService.petroWriteCnt(page);
 		model.addAttribute("pageVO", pageVO);

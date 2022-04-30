@@ -46,6 +46,7 @@
 							<img src="${root }upload/${readAdoptVO.adopt_img}" width="100%"/>						
 						</div>
 					</c:if>
+					
 					<div class="form-group">
 						<label for="board_content">내용</label>
 						<textarea id="board_content" name="board_content" class="form-control" rows="10" style="resize:none" disabled="disabled">${readAdoptVO.adopt_content}</textarea>

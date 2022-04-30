@@ -8,11 +8,17 @@ import javax.servlet.ServletContext;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.global.dao.ShareDAO;
+<<<<<<< HEAD
+=======
+import com.global.vo.AdoptVO;
+import com.global.vo.PageVO;
+>>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
 import com.global.vo.ShareVO;
 import com.global.vo.UserVO;
 
@@ -28,6 +34,12 @@ public class ShareService {
 	@Resource(name = "loginUserVO")
 	@Lazy
 	private UserVO loginUserVO;
+	
+	@Value("${page.listcnt}")
+	private int page_listcnt;
+	
+	@Value("${page.paginationcnt}")
+	private int page_paginationcnt;
 
 	// 리스트가져오기
 	public List<ShareVO> getList() {
@@ -37,18 +49,18 @@ public class ShareService {
 	
 	//파일 경로 설정 , 파일이름 변경 , 파일저장
 	private String saveUploadFile(MultipartFile upload_file) {
-		String root_path = servletContext.getRealPath("/resources/upload/");
+		String path = servletContext.getRealPath("/resources/upload");
 		String file_name = System.currentTimeMillis() + "_" + upload_file.getOriginalFilename();
 		// 사용자가 보낸 파일 이름앞에 현재시간을 달아준다.
 
 		try {
-			upload_file.transferTo(new File(root_path + file_name));
 
-			System.out.println(root_path );
-		} catch (Exception e) {
+			upload_file.transferTo(new File(path + "/" + file_name)); //주입받은 업로드
+		} catch(Exception e) {
+			
 			e.printStackTrace();
 		}
-
+		
 		return file_name;
 	}
 	
@@ -92,5 +104,16 @@ public class ShareService {
 
 		shareDAO.shareModifyInfo(shareModifyVO);
 	}
+	//페이징
+	
+	public PageVO shareWriteCnt(int currentPage) {
+		
+		int content_cnt = shareDAO.shareWriteCnt();
+		
+		PageVO pageVO = new PageVO(content_cnt, currentPage, page_listcnt, page_paginationcnt);
+		
+		return pageVO;
+	}
+
 
 }

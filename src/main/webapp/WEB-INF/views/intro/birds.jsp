@@ -7,62 +7,50 @@
 <head>
 <meta charset="UTF-8">
 <title>조류</title>
-  <link rel="stylesheet" href="${root }resource/intro/style.css">
-
+  <link rel="stylesheet" href="${root }intro/style.css">
+  
+  
 </head>
 <body>
 	<!-- 헤더 -->
 	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
 	
 	<!-- 컨텐츠 -->
+	<div class="c-body">
 	<!-- partial:index.partial.html -->
-<div class="header">
+ 	<div class="header">
 	<!-- 	<h1>Spinny Flipz</h1> -->
-</div>
-<section class="slider-section">
-	<div class="wheel">
-		<div class="wheel__card">
-			<img src="img/parakee(int).png" />
-			<div style="text-align: center; color:red;">
-				<h4>크리미노퀘이커</h4>
+	</div>
+	<section class="slider-section">
+		<div class="wheel">
+			<div class="wheel__card">
+				<img src="${root }img/intro/parakee(int).png" />
 			</div>
-		</div>
-		<div class="wheel__card">
-			<img src="img/Lutino(int).png" />
-			<div style="text-align: center;color: orange;">
-				<h4>루티노</h4>
+			<div class="wheel__card">
+				<img src="${root }img/intro/Lutino(int).png" />
 			</div>
-		</div>
-		<div class="wheel__card">
-			<img src="img/Bud(int).png" />
-			<div style="text-align: center;color: rgb(204, 204, 34);">
-				<h4>사랑 앵무</h4>
-			</div>w
-		</div>
-		<div class="wheel__card">
-			<img src="img/bpara(int).png" />
-			<div style="text-align: center;color: yellowgreen;">
-				<h4>이사벨퀘이커</h4>
+			<div class="wheel__card">
+				<img src="${root }img/intro/Bud(int).png" />
 			</div>
-		</div>
-		<div class="wheel__card">
-			<img src="img/gal(inti).png" />
-			<div style="text-align: center;color: blue;">
-				<h4>갈라 코카투</h4>
+			<div class="wheel__card">
+				<img src="${root }img/intro/bpara(int).png" />
 			</div>
+			<div class="wheel__card">
+				<img src="${root }img/intro/gal(inti).png" />
+			</div>		
+		</div>
+		</section>
+		<div class="scroll-down">Scroll down<div class="arrow"></div>
 		</div>
 		
+		<!-- partial -->
+		<script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+		<script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+		<script src='https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js'></script>
+		<script src='https://assets.codepen.io/16327/Flip.min.js'></script>
+		<script  src="${root }intro/script.js"></script>
+		
 	</div>
-</section>
-
-<!-- partial -->
-  <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
-<script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
-<script src='https://unpkg.com/gsap@3/dist/MotionPathPlugin.min.js'></script>
-<script src='https://assets.codepen.io/16327/Flip.min.js'></script><script  src="./script.js"></script>
-	
-	<!--푸터 -->
-	<c:import url="/WEB-INF/views/include/bottom_info.jsp"></c:import>
 
 </body>
 </html>

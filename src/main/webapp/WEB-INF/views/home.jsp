@@ -68,21 +68,35 @@
 				<div class="text01">BEST OF PET</div>
 				<div class="text02">Warau 최고의 인기스타 TOP4</div>
 			</div>
+			
 			<div class="content">
 				<ul>
+<<<<<<< HEAD
 					<li>
+=======
+					
+				<c:forEach var="obj" items="${p_list }">
+			
+						<li><a href="${root }board/petro/read?petro_idx=${obj.petro_idx}">
+>>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
 							<div class="bestBox back-to-position to-down">
 								<div class="petimg">
+<<<<<<< HEAD
 									<a href="#"><img src="${root }img/pet/best1.jpg" alt=""></a>
+=======
+									<img src="${root }upload/${obj.petro_img}" alt="">
+>>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
 								</div>
 								<div class="petText">
 									<div class="icon material-icons-outlined">
 										<span>favorite</span>commentsend
 									</div>
-									<div>좋아요 1235개</div>
-									<div class="id">codud0826 멍멍이랑 바다갔어요</div>
+									
+									<div class="id">${obj.petro_title }</div>
+									<div class="id">${obj.petro_writer }</div>
 								</div>
 							</div>
+<<<<<<< HEAD
 					</li>
 
 					<li>
@@ -129,17 +143,23 @@
 								</div>
 							</div>
 					</li>
+=======
+						</a></li>
+				</c:forEach>
+				
+>>>>>>> branch 'develop' of https://github.com/kd0427/SpringMVC-warau.git
 				</ul>
 			</div>
-		</div>
-	</section>
-
+	</div>		
+</section>
 	<!-- 가족을 찾아요 -->
 	<section class="find inner scroll-spy">
 		<div class="title">
 			<div class="text01">FIND A FAMILY</div>
 			<div class="text02">가족을 구해요</div>
 		</div>
+		
+		
 		<div class="findfamily content back-to-position to-down">
 			<div class="swiper mySwiper2">
 				<div class="swiper-wrapper">

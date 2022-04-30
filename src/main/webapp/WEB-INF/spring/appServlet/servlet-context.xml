@@ -89,6 +89,13 @@
 			<beans:bean class='com.global.interceptor.CheckAdoptInterceptor'/>
 		</interceptor>
 		
+		<!-- Info인터셉터 -->
+		<interceptor>
+			<mapping path="/board/info/modify"/>
+			<mapping path="/board/info/delete"/>
+			<beans:bean class='com.global.interceptor.CheckInfoInterceptor'/>
+		</interceptor>
+		
 	</interceptors>
 	
 	<!-- MessageSource를 등록한다. -->
