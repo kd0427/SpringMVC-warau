@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.global.dao.InfoDAO;
 import com.global.vo.InfoVO;
 import com.global.vo.PageVO;
+import com.global.vo.PetroVO;
 import com.global.vo.UserVO;
 
 @Service
@@ -66,19 +67,19 @@ public class InfoService {
 
 	 
 	//글쓰기 
-	public void infoAddWrite(InfoVO writeInfoVO) {
-	
-	MultipartFile upload_file = writeInfoVO.getUpload_img(); //사용자가 요청한 파일
-	
-	if(upload_file.getSize() > 0) { //파일이 있으면
-		String file_name = saveUplaodFile(upload_file); // 현재시간 + 파일이름 불러주는 메소드 호출
-		writeInfoVO.setInfo_img(file_name); //(디비이름)img에도 업로드한 이미지의 이름을 
+public void infoAddWrite(InfoVO infoWriteVO) {
+		
+		MultipartFile upload_file = infoWriteVO.getUpload_img(); //사용자가 요청한 파일
+		
+		if(upload_file.getSize() > 0) { //파일이 있으면
+			String file_name = saveUplaodFile(upload_file); // 현재시간 + 파일이름 불러주는 메소드 호출
+			infoWriteVO.setInfo_img(file_name); //(디비이름)img에도 업로드한 이미지의 이름을 
+		}
+		
+		infoWriteVO.setInfo_writer(loginUserVO.getUser_id()); //작성자가 누군지 알려고 하는 거
+		
+		infoDAO.write(infoWriteVO);
 	}
-	
-	writeInfoVO.setInfo_writer(loginUserVO.getUser_id()); //작성자가 누군지 알려고 하는 거
-	
-	InfoDAO.write(writeInfoVO);
-}
 	
 	
 	///글읽기
@@ -96,7 +97,7 @@ public class InfoService {
 		MultipartFile upload_file = infoModifyVO.getUpload_img();
 		
 		if(upload_file.getSize() > 0) { //파일이 있으면
-			String file_name = saveUploadFile(upload_file); // 현재시간 + 파일이름 불러주는 메소드 호출
+			String file_name = saveUplaodFile(upload_file); // 현재시간 + 파일이름 불러주는 메소드 호출
 			infoModifyVO.setInfo_img(file_name); //(디비이름)img에도 업로드한 이미지의 이름을 
 		}
 		

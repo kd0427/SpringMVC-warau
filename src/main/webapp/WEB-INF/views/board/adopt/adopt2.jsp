@@ -87,15 +87,8 @@
 									class="page-link">다음</a></li>
 							</c:otherwise>
 						</c:choose>
-					</ul>
-					
-			
-					
+					</ul>	
 				</div>
-
-			
-
-
 
 	<!-- 푸터 -->
 

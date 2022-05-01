@@ -46,7 +46,7 @@ public class ShareController {
 		System.out.println(shareList);
 		
 		
-		return "board/share/share";
+		return "board/share/share2";
 	}
 	
 	///

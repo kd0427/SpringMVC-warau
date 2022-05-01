@@ -19,7 +19,7 @@ public class UserVO {
 	@Pattern(regexp = "[a-zA-Z0-9]*")
 	private String user_pw2;
 	
-	@Size(min=2, max=4)
+	@Size(min=2, max=10)
 	@Pattern(regexp = "[가-힣]*") // 한글만 입력가능
 	private String user_name;
 	

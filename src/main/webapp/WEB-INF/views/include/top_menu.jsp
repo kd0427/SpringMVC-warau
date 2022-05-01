@@ -88,16 +88,15 @@
 
 					<li><a href="${root }board/notice">NOTICE</a></li>
 					<li><a href="${root }board/qna">QnA</a></li>
-					<li><a href="#">COMPANY</a></li>
 				</ul>
 			</div>
 			<c:choose>
 					<c:when test="${loginUserVO.userLogin == true }">
 						<div class="sub">
 							<ul>
-								<li><a href="${root }user/logout">LOGOUT</a></li>
-								<li>|</li>
 								<li><a href="${root }user/modify">MYPAGE</a></li>
+								<li>|</li>
+								<li><a href="${root }user/logout">LOGOUT</a></li>
 							</ul>
 						</div>
 					</c:when>
