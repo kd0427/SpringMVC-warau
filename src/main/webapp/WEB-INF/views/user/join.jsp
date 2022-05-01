@@ -56,7 +56,7 @@
 			<source src="${root }img/video/joincat.mp4" type="video/mp4">
 		</video>
 
-		<div class="container">
+		<div class="container container2">
 			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">

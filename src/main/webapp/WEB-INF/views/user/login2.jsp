@@ -22,7 +22,7 @@
 	<!-- 상단 메뉴 부분 -->
 	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
 	
-	<div class="videobox">
+	<div class="videobox2">
 		<video width="100%" height="auto" autoplay loop muted>
 	        <source src="${root }img/video/logincat.mp4" type="video/mp4">
 	    </video>
