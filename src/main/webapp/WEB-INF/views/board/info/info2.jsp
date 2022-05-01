@@ -25,7 +25,7 @@
 						<c:forEach var='infoList' items='${infoList }'>
 							<div class="item ">
 								<div class="shareImg">
-									<a href="${root }board/info/read?adopt_idx=${infoList.info_idx}"><img src="${root }upload/${infoList.info_img}" alt=""></a>
+									<a href="${root }board/info/read?info_idx=${infoList.info_idx}"><img src="${root }upload/${infoList.info_img}" alt=""></a>
 								</div>
 								<div class="shareText">
 									<div>${infoList.info_title }</div>
@@ -50,7 +50,7 @@
 							</c:when>
 							<c:otherwise>
 								<li class="page-item "><a
-									href="${root }board/adopt?page=${pageVO.prevPage}"
+									href="${root }board/info?page=${pageVO.prevPage}"
 									class="page-link">이전</a></li>
 							</c:otherwise>
 						</c:choose>
@@ -62,12 +62,12 @@
 							<c:choose>
 								<c:when test="${p_idx == pageVO.currentPage }">
 									<li class="page-item active"><a
-										href="${root }board/adopt?page=${p_idx}" class="page-link">${p_idx}</a>
+										href="${root }board/info?page=${p_idx}" class="page-link">${p_idx}</a>
 									</li>
 								</c:when>
 								<c:otherwise>
 									<li class="page-item "><a
-										href="${root }board/adopt?page=${p_idx}" class="page-link">${p_idx}</a>
+										href="${root }board/info?page=${p_idx}" class="page-link">${p_idx}</a>
 									</li>
 								</c:otherwise>
 							</c:choose>
@@ -83,7 +83,7 @@
 							</c:when>
 							<c:otherwise>
 								<li class="page-item"><a
-									href="${root }board/adopt?page=${pageVO.nextPage}"
+									href="${root }board/info?page=${pageVO.nextPage}"
 									class="page-link">다음</a></li>
 							</c:otherwise>
 						</c:choose>

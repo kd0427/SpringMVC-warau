@@ -46,44 +46,40 @@ public class InfoService {
 		return infoDAO.getList(rowbounds);
 	}
 
-	//글쓰기
-	private String saveUploadFile(MultipartFile upload_file) {
-		String root_path = servletContext.getRealPath("/resources/upload/");  
+
+	//업로드 파일 저장 메소드
+	private String saveUplaodFile(MultipartFile upload_file) { //파일 이름이 중복될 수 있어서 현재시간 붙여서
 		String file_name = System.currentTimeMillis() + "_" + upload_file.getOriginalFilename();
-		//사용자가 보낸 파일 이름앞에 현재시간을 달아준다.
-		
-		File uploadImg = new File(root_path, file_name);
-		if(!uploadImg.exists()) { uploadImg.mkdirs(); }
-
-
+		String path = servletContext.getRealPath("/resources/upload");
 		
 		try {
-			upload_file.transferTo(uploadImg);
+
+			upload_file.transferTo(new File(path + "/" + file_name)); //주입받은 업로드
+		} catch(Exception e) {
 			
-			System.out.println(root_path+file_name);
-		}catch(Exception e){
 			e.printStackTrace();
 		}
 		
-		
 		return file_name;
+		
+	}
+
+	 
+	//글쓰기 
+	public void infoAddWrite(InfoVO writeInfoVO) {
+	
+	MultipartFile upload_file = writeInfoVO.getUpload_img(); //사용자가 요청한 파일
+	
+	if(upload_file.getSize() > 0) { //파일이 있으면
+		String file_name = saveUplaodFile(upload_file); // 현재시간 + 파일이름 불러주는 메소드 호출
+		writeInfoVO.setInfo_img(file_name); //(디비이름)img에도 업로드한 이미지의 이름을 
 	}
 	
-	public void addContentInfo(InfoVO writeInfoVO) {
-		
-		MultipartFile upload_file = writeInfoVO.getUpload_img(); // 사용자가 요청한 파일
-		
-		if(upload_file.getSize()>0) { //파일이 있으면
-			String file_name = saveUploadFile(upload_file); // 파일 이름앞에 현재시간 달아주는 메소드 호출
-			
-			writeInfoVO.setInfo_img(file_name);
-		}
-		
-		writeInfoVO.setInfo_writer(loginUserVO.getUser_id()); // 작성자번호를 현재로그인한 사람의 아이디번호로 세팅
-		
-		infoDAO.write(writeInfoVO);;
-		
-	}
+	writeInfoVO.setInfo_writer(loginUserVO.getUser_id()); //작성자가 누군지 알려고 하는 거
+	
+	InfoDAO.write(writeInfoVO);
+}
+	
 	
 	///글읽기
 	public InfoVO getContentInfo(int info_idx) {

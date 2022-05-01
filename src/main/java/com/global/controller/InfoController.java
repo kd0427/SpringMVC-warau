@@ -63,7 +63,7 @@ public class InfoController {
 			return "board/info/write";
 		}
 
-		infoService.addContentInfo(writeInfoVO);
+		infoService.infoAddWrite(writeInfoVO);
 
 		return "board/info/write_success";
 
