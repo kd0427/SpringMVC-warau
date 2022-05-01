@@ -18,38 +18,34 @@
 	<c:import url="/WEB-INF/views/include/top_menu.jsp"/>
 	
 	<!-- 게시글 리스트 -->
-	<div class="container" style="margin-top: 100px">
-		<div class="card shadow">
-			<div class="card-body">
-				<h4 class="card-title">PETRODUCE</h4>
-				<table class="table table-hover" id='board_list'>
-					<thead>
-						<tr>
-							<th class="text-center d-none d-md-table-cell">글번호</th>
-							<th class="w-50">제목</th>
-							<th class="text-center d-none d-md-table-cell">작성자</th>
-							<th class="text-center d-none d-md-table-cell">작성날짜</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="p" items="${petroContentList }" >
-						
-						<tr>
-							<td class="text-center d-none d-md-table-cell">${p.petro_idx }</td>
-							<td><a href='${root }board/petro/read?petro_idx=${p.petro_idx}'>${p.petro_title }</a></td>
-							<td class="text-center d-none d-md-table-cell">${p.petro_writer }</td>
-							<td class="text-center d-none d-md-table-cell">${p.petro_regdate }</td>
-
-						</tr>
-
-						</c:forEach>
 					
-						
-					</tbody>
-				</table>
+						<section class="share inner scroll-spy">
+					<div class="boardtitle">
+						<div class="text01">PETRODUCE</div>
+						<div class="text02">가족을 소개합니다</div>
+					</div>
+					<div class="boardcontent back-to-position to-down">
+						<c:forEach var='p' items='${petroContentList }'>
+							<div class="item ">
+								<div class="shareImg">
+									<a href="${root }board/petro/read?petro_idx=${p.petro_idx}"><img src="${root }upload/${p.petro_img}" alt=""></a>
+								</div>
+								<div class="shareText">
+									<div>${p.petro_title }</div>
+									<div>${p.petro_writer }</div>
+								</div>
+							</div>
+						</c:forEach>
+					</div>
+				<div class="text-right">
+					<a href="${root }board/petro/write" class="btn btn-primary">글쓰기</a>
+				</div>
+				</section>
 
 				<div class="d-none d-md-block">
 					<ul class="pagination justify-content-center">
+					
+					
 					
 						<!-- 이전버튼 -->
 						<c:choose>
@@ -105,10 +101,6 @@
 					</ul>
 				</div>
 
-
-				<div class="text-right">
-					<a href="${root }board/petro/write" class="btn btn-primary">글쓰기</a>
-				</div>
 
 			</div>
 		</div>
