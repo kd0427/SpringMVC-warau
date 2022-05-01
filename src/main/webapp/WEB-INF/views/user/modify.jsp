@@ -7,6 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel='stylesheet'
+	href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>미니 프로젝트</title>
 </head>
@@ -20,38 +22,40 @@
 	<div class="row">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6">
-			<div class="card shadow">
+			<div class="card shadow card2">
 				<div class="card-body">
 					<form:form action="${root }user/modify_pro" method="post" modelAttribute="modifyUserVO">
 						<div class="form-group">
-							<form:label path="user_name">이름</form:label>
+							<form:label path="user_name"><i class="uil uil-user"></i>이름</form:label>
 							<form:input path="user_name" class='form-control' readonly='true'/>
 							
 						</div>
 						<div class="form-group">
-							<form:label path="user_id">아이디</form:label>
+							<form:label path="user_id"><i
+								class="input-icon uil uil-grin-tongue-wink"></i>아이디</form:label>
 							<form:input path="user_id" class='form-control' readonly='true'/>
 						</div>
 						<div class="form-group">
-							<form:label path="user_email">이메일</form:label>
+							<form:label path="user_email"><i class="uil uil-envelopes"></i>이메일</form:label>
 							<form:input path="user_email" class='form-control' readonly='true'/>
 						</div>
 						<div class="form-group">
-							<form:label path="user_pet">애완동물</form:label>
+							<form:label path="user_pet"><i class="uil uil-heart"></i>애완동물</form:label>
 							<form:input path="user_pet" class='form-control' readonly='true'/>
 						</div>
 						<div class="form-group">
-							<form:label path="user_date">회원가입일</form:label>
+							<form:label path="user_date"><i class="uil uil-calendar-alt"></i>회원가입일</form:label>
 							<form:input path="user_date" class='form-control' readonly='true'/>
 						</div>
 						<div class="form-group">
-							<label for="user_pw">새로운 비밀번호</label>
-							<form:label path="user_pw">새로운 비밀번호</form:label>
+							<form:label path="user_pw"><i
+								class="input-icon uil uil-lock-alt"></i>새로운 비밀번호</form:label>
 							<form:password path="user_pw" class='form-control'/>
 							<form:errors path="user_pw" style='color:red'/>
 						</div>
 						<div class="form-group">
-							<form:label path="user_pw2">새로운 비밀번호 확인</form:label>
+							<form:label path="user_pw2"><i
+								class="input-icon uil uil-lock-alt"></i>새로운 비밀번호 확인</form:label>
 							<form:password path="user_pw2" class='form-control'/>
 							<form:errors path="user_pw2" style='color:red'/>
 						</div>

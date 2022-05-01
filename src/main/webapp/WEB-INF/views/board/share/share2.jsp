@@ -43,7 +43,7 @@
 					<ul class="pagination justify-content-center">
 
 						<!-- 이전버튼 -->
-						<c:choose>00
+						<c:choose>
 							<c:when test="${pageVO.prevPage <= 0 }">
 								<li class="page-item disabled"><a href="#"
 									class="page-link">이전</a></li>

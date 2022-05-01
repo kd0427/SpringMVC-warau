@@ -8,6 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet'
+	href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
 <title>미니 프로젝트</title>
 <script>
 	function checkUserIdExist(){
@@ -59,13 +61,14 @@
 							modelAttribute="joinUserVO">
 							<form:hidden path="userIdExist"/>
 							<div class="form-group">
-								<form:label path="user_name">이름</form:label>
+								<form:label path="user_name"><i class="uil uil-user"></i>이름</form:label>
 								<form:input path="user_name" class="form-control" />
 								<form:errors path="user_name" style="color:red" />
 							</div>
 							<div class="form-group">
 
-								<form:label path="user_id">아이디</form:label>
+								<form:label path="user_id"><i
+								class="input-icon uil uil-grin-tongue-wink"></i>아이디</form:label>
 								<div class="input-group">
 									<form:input path="user_id" class="form-control" onkeypress="resetUserIdExist()"/>
 									<div class="input-group-append">
@@ -76,22 +79,24 @@
 								<form:errors path="user_id" style="color:red" />
 							</div>
 							<div class="form-group">
-								<form:label path="user_pw">비밀번호</form:label>
+								<form:label path="user_pw"><i
+								class="input-icon uil uil-lock-alt"></i>비밀번호</form:label>
 								<form:password path="user_pw" class="form-control" />
 								<form:errors path="user_pw" style="color:red" />
 							</div>
 							<div class="form-group">
-								<form:label path="user_pw2">비밀번호 확인</form:label>
+								<form:label path="user_pw2"><i
+								class="input-icon uil uil-lock-alt"></i>비밀번호 확인</form:label>
 								<form:password path="user_pw2" class="form-control" />
 								<form:errors path="user_pw2" style="color:red" />
 							</div>
 							<div class="form-group">
-								<form:label path="user_email">이메일</form:label>
+								<form:label path="user_email"><i class="uil uil-envelopes"></i>이메일</form:label>
 								<form:input path="user_email" class="form-control" />
 								<form:errors path="user_email" style="color:red" />
 							</div>
 							<div class="form-group">
-								<form:label path="user_pet">애완동물</form:label>
+								<form:label path="user_pet"><i class="uil uil-heart"></i>애완동물</form:label>
 								<form:input path="user_pet" class="form-control" />
 								<form:errors path="user_pet" style="color:red" />
 							</div>
