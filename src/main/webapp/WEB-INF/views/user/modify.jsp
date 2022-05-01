@@ -21,7 +21,7 @@
 		<video width="100%" height="auto" autoplay loop muted>
 			<source src="${root }img/video/modifydog.mp4" type="video/mp4">
 		</video>
-		<div class="container2">
+		<div class="container3">
 			<div class="row">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-6">
