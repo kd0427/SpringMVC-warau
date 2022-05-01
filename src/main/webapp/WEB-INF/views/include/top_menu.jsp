@@ -88,7 +88,6 @@
 
 					<li><a href="${root }board/notice">NOTICE</a></li>
 					<li><a href="${root }board/qna">QnA</a></li>
-					<li><a href="#">COMPANY</a></li>
 				</ul>
 			</div>
 			<c:choose>
