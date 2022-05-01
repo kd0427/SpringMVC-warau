@@ -88,13 +88,13 @@
 								<div class="form-group">
 									<form:label path="user_pw">
 										<i class="input-icon uil uil-lock-alt"></i>비밀번호</form:label>
-									<form:password path="user_pw" class="form-control" />
+									<form:password path="user_pw" class="form-control" autoComplete="on" />
 									<form:errors path="user_pw" style="color:red" />
 								</div>
 								<div class="form-group">
 									<form:label path="user_pw2">
 										<i class="input-icon uil uil-lock-alt"></i>비밀번호 확인</form:label>
-									<form:password path="user_pw2" class="form-control" />
+									<form:password path="user_pw2" class="form-control" autoComplete="on" />
 									<form:errors path="user_pw2" style="color:red" />
 								</div>
 								<div class="form-group">

@@ -57,7 +57,7 @@
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
 	
 <script defer src="${root }js/scripts.js"></script>
-
+<link rel="icon" type="image/png"  href="${root }img/favicon.png"/>
 <link rel="stylesheet" href="${root }css/master.css">
 </head>
 <body>
