@@ -95,9 +95,9 @@
 					<c:when test="${loginUserVO.userLogin == true }">
 						<div class="sub">
 							<ul>
-								<li><a href="${root }user/logout">LOGOUT</a></li>
-								<li>|</li>
 								<li><a href="${root }user/modify">MYPAGE</a></li>
+								<li>|</li>
+								<li><a href="${root }user/logout">LOGOUT</a></li>
 							</ul>
 						</div>
 					</c:when>

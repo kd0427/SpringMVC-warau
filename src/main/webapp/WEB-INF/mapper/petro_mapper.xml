@@ -9,7 +9,7 @@
 	<select id="getPetroList" resultType="com.global.vo.PetroVO">
 		<![CDATA[
 			select petro_idx, petro_title, petro_writer, 
-				to_char(petro_regdate, 'YYYY-MM-DD') as petro_regdate
+				to_char(petro_regdate, 'YYYY-MM-DD') as petro_regdate,petro_img
 			from petro_table 
 			order by petro_idx desc
 		]]>
