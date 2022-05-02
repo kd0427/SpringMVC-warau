@@ -635,4 +635,6 @@ nav .main ul li ul li a:hover{
 
 #chat-box{
 	min-height:400px;
+	max-height:600px;
+	overflow: scroll;
 }
