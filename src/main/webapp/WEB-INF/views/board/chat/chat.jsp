@@ -410,7 +410,7 @@ ul {
 			<source src="${root }img/video/chat1.mp4" type="video/mp4">
 		</video>
 
-	<div class="container chatbox container4">
+	<div class="container chatbox container4" id="chat-box3">
 
 		<!-- Page header start -->
 		<div class="page-title">
@@ -441,7 +441,7 @@ ul {
 								<div class="selected-user">
 									<span><span class="name">Warau Chat</span>(<span id="myId">${chatId }</span>)</span>
 								</div>
-								<div class="chat-container">
+								<div class="chat-container" id="chat-box2">
 									<ul class="chat-box chatContainerScroll" id="chat-box">
 									</ul>
 									<div class="form-group mt-3 mb-0">
@@ -600,6 +600,8 @@ ul {
       });
       
       $("#chat-box").scrollTop($("#chat-box")[0].scrollHeight);
+      $("#chat-box2").scrollTop($("#chat-box2")[0].scrollHeight);
+      $("#chat-box3").scrollTop($("#chat-box3")[0].scrollHeight);
     });
     
 	
