@@ -27,7 +27,7 @@
 			<div class="card shadow">
 				<div class="card-body">
 					
-					<form:form action="${root}/board/petro/write_pro" method="post" modelAttribute="petroWriteVO" enctype="multipart/form-data">
+					<form:form action="${root}board/petro/write_pro" method="post" modelAttribute="petroWriteVO" enctype="multipart/form-data">
 					<div class="form-group">
 						
 						<form:label path="petro_title">제목</form:label>
