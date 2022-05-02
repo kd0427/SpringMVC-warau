@@ -7,6 +7,6 @@
 <script>
 
 	alert("등록되었습니다.")
-	location.href="${root}/board/petro"
+	location.href="${root}board/petro"
 	
 </script>

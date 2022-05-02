@@ -28,7 +28,7 @@
 			<div class="card shadow">
 				<div class="card-body">
 				
-				<form:form action='${root}/board/adopt/modify_pro' method="post" modelAttribute="adoptModifyVO" enctype="multipart/form-data">
+				<form:form action='${root}board/adopt/modify_pro' method="post" modelAttribute="adoptModifyVO" enctype="multipart/form-data">
 					<form:hidden path="adopt_idx"/>	
 						<div class="form-group">
 							

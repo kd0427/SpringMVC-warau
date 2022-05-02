@@ -6,6 +6,6 @@
 <script>
 
 	alert("수정되었습니다.")
-	location.href="${root}/board/adopt/read?adopt_idx=${adoptModifyVO.adopt_idx}"
+	location.href="${root}board/adopt/read?adopt_idx=${adoptModifyVO.adopt_idx}"
 
 </script>
