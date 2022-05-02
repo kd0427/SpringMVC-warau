@@ -421,7 +421,7 @@ ul {
 					<button type="button" class="btn btn-primary" id="connect-button">Connect</button>
 				</div>
 			</div>
-			<div class="row status" id="status"></div>
+			<div class="row status" id="status" style='color:red'></div>
 		</div>
 		<!-- Page header end -->
 
