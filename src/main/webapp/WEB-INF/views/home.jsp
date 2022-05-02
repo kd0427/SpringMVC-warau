@@ -118,7 +118,7 @@
 
 					<div class="swiper-slide">
 						<div id="second2" class="familyImg">
-							<img src="${root }img/pet/cat-2762156_1280.jpg" alt="">
+							<img src="${root }img/pet/adoptdog1.jpg" alt="">
 						</div>
 						<div class="familyText">
 							<span id="petName2"> 이름: 멍멍이<br> 나이: 2살이에오<br>
@@ -129,7 +129,7 @@
 
 					<div class="swiper-slide">
 						<div class="familyImg">
-							<img src="${root }img/pet/cat-2762156_1280.jpg" alt="">
+							<img src="${root }img/pet/adoptcat1.jpg" alt="">
 						</div>
 						<div class="familyText">
 							<span id="petName3"> 이름: 잼미니<br> 나이: 3살이에오<br>
@@ -140,18 +140,18 @@
 
 					<div class="swiper-slide">
 						<div class="familyImg">
-							<img src="${root }img/pet/cat-2762156_1280.jpg" alt="">
+							<img src="${root }img/pet/adoptdog2.jpg" alt="">
 						</div>
 						<div class="familyText">
 							<span id="petName4"> 이름: 쫑구<br> 나이: 1살이에오<br>
-								종류: 시고르잡종<br> <br> 사유: 개인사정으로 키울수가 없어요 ㅠㅠ
+								종류: <br> <br> 사유: 개인사정으로 키울수가 없어요 ㅠㅠ
 							</span>
 						</div>
 					</div>
 
 					<div class="swiper-slide">
 						<div class="familyImg">
-							<img src="${root }img/pet/cat-2762156_1280.jpg" alt="">
+							<img src="${root }img/pet/adoptdog3.jpg" alt="">
 						</div>
 						<div class="familyText">
 							<span id="petName5"> 이름: 흰둥이<br> 나이: 1살이에오<br>
@@ -162,7 +162,7 @@
 
 					<div class="swiper-slide">
 						<div class="familyImg">
-							<img src="${root }img/pet/cat-2762156_1280.jpg" alt="">
+							<img src="${root }img/pet/adoptcat2.jpg" alt="">
 						</div>
 						<div class="familyText">
 							<span id="petName6"> 이름: 찡찡이<br> 나이: 2살이에오<br>

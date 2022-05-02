@@ -21,34 +21,39 @@
 <body>
 	<!-- 상단 메뉴 부분 -->
 	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
-
-	<div class="card-3d-wrapper">
-		<div class="card-front">
-			<div class="center-wrap">
-				<form:form action="${root }user/login_pro" method='post'
-					modelAttribute="tempLoginUserVO">
-					<div class="section text-center">
-						<h4 class="login mb-4 pb-3">LOGIN</h4>
-						<div class="form-group">
-							<form:input path="user_id" class="form-style"
-								placeholder="아이디" autocomplete="off"/> <i
-								class="input-icon uil uil-grin-tongue-wink"></i>
-							<form:errors path='user_id' style='color:red' />
+	
+	<div class="videobox2">
+		<video width="100%" height="auto" autoplay loop muted>
+	        <source src="${root }img/video/logincat.mp4" type="video/mp4">
+	    </video>
+	
+		<div class="card-3d-wrapper">
+			<div class="card-front">
+				<div class="center-wrap">
+					<form:form action="${root }user/login_pro" method='post'
+						modelAttribute="tempLoginUserVO">
+						<div class="section text-center">
+							<h4 class="login mb-4 pb-3">LOGIN</h4>
+							<div class="form-group">
+								<form:input path="user_id" class="form-style"
+									placeholder="아이디" autocomplete="off"/> <i
+									class="input-icon uil uil-grin-tongue-wink"></i>
+								<form:errors path='user_id' style='color:red' />
+							</div>
+							<div class="form-group mt-4">
+								<form:password class="form-style" path="user_pw"
+									placeholder="비밀번호" id="logpass" autocomplete="off"/> <i
+									class="input-icon uil uil-lock-alt"></i>
+								<form:errors path='user_pw' style='color:red' />
+							</div>
+							<form:button class='btn mt-1'>로그인</form:button>
+							<a href="${root }user/join" class="btn mt-1">회원가입</a>
 						</div>
-						<div class="form-group mt-4">
-							<form:password class="form-style" path="user_pw"
-								placeholder="비밀번호" id="logpass" autocomplete="off"/> <i
-								class="input-icon uil uil-lock-alt"></i>
-							<form:errors path='user_pw' style='color:red' />
-						</div>
-						<form:button class='btn mt-1'>로그인</form:button>
-						<a href="${root }user/join" class="btn mt-1">회원가입</a>
-					</div>
-				</form:form>
+					</form:form>
+				</div>
 			</div>
 		</div>
 	</div>
-
 	<c:import url="/WEB-INF/views/include/bottom_info.jsp" />
 
 </body>

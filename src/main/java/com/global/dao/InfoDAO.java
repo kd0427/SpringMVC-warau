@@ -22,7 +22,7 @@ public class InfoDAO {
 	
 	
 	// 글쓰기
-	public void write(InfoVO writeInfoVO) {
+	public  void write(InfoVO writeInfoVO) {
 		sqlSessionTemplate.insert("info.write", writeInfoVO);
 	}
 
