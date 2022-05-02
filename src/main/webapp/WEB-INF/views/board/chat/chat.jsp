@@ -544,6 +544,11 @@ ul {
         conn = null;
       });
     }
+    
+    function updateScroll(){
+        var element = document.getElementById("#chat-box");
+        element.scrollTop = element.scrollHeight;
+    }
 
     function addMessage(msg, side){
       var now = new Date();
@@ -578,6 +583,8 @@ ul {
       }
 
       $('#chat-box').append(msgHtml.join(""));
+      $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
+      updateScroll ();
     }
 
     $(document).ready(function(){
@@ -593,15 +600,14 @@ ul {
             $('#sendMessageBox').val('');
             conn.send(msg);
             addMessage(msg,"left");
+            $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
+            updateScroll ();
+            
           }else{
             $('#status').html('Connection is closed')
           }
         }
       });
-      
-      $("#chat-box").scrollTop($("#chat-box")[0].scrollHeight);
-      $("#chat-box2").scrollTop($("#chat-box2")[0].scrollHeight);
-      $("#chat-box3").scrollTop($("#chat-box3")[0].scrollHeight);
     });
     
 	
