@@ -598,9 +598,12 @@ ul {
           }
         }
       });
+      
+      $("#chat-box").scrollTop($("#chat-box")[0].scrollHeight);
     });
+    
 	
-    $("#chat-box").scrollTop($("#chat-box")[0].scrollHeight);
+    
   </script>
 </body>
 </html>
