@@ -6,6 +6,6 @@
 <script>
 
 	alert("수정되었습니다.")
-	location.href="${root}/board/petro/read?petro_idx=${petroModifyVO.petro_idx}"
+	location.href="${root}board/petro/read?petro_idx=${petroModifyVO.petro_idx}"
 
 </script>

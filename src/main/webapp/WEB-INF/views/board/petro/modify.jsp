@@ -28,7 +28,7 @@
 			<div class="card shadow">
 				<div class="card-body">
 				
-				<form:form action='${root}/board/petro/modify_pro' method="post" modelAttribute="petroModifyVO" enctype="multipart/form-data">
+				<form:form action='${root}board/petro/modify_pro' method="post" modelAttribute="petroModifyVO" enctype="multipart/form-data">
 					<form:hidden path="petro_idx"/>	
 						<div class="form-group">
 							

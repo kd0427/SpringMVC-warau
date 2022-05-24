@@ -28,7 +28,7 @@
 			<div class="card shadow">
 				<div class="card-body">
 				
-				<form:form action='${root}/board/adopt/modify_pro' method="post" modelAttribute="adoptModifyVO" enctype="multipart/form-data">
+				<form:form action='${root}board/adopt/modify_pro' method="post" modelAttribute="adoptModifyVO" enctype="multipart/form-data">
 					<form:hidden path="adopt_idx"/>	
 						<div class="form-group">
 							
@@ -69,7 +69,7 @@
 							<div class="text-right">
 							
 								<form:button class="btn btn-primary">수정완료</form:button>
-								<a href="${root }board/read?adopt_idx=${adopt_idx}" class="btn btn-info">취소</a>
+								<a href="${root }board/adopt/read?adopt_idx=${adopt_idx}" class="btn btn-info">취소</a>
 								
 							</div>
 						</div>

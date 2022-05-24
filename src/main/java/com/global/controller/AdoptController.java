@@ -138,7 +138,16 @@ public class AdoptController {
 		@GetMapping("/adopt/not_writer")
 		public String not_writer() {
 			
-			return "/board/adopt/not_writer";
+			return "board/adopt/not_writer";
+		}
+		
+		
+		//채팅
+		@GetMapping("/chat")
+		public String chat(Model model) {
+			String id = loginUserVO.getUser_id();
+			model.addAttribute("chatId",id);
+			return "board/chat/chat";
 		}
 		
 }

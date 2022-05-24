@@ -40,7 +40,7 @@
 							<div class="form-group">
 								<form:label path="user_pw">비밀번호</form:label>
 								<form:password path="user_pw" class="form-control" />
-								<form:errors path='user_pw' style='color:red' />
+								<form:errors path='user_pw' style='color:rgba(255,0,0,0.4)' />
 							</div>
 							<div class="form-group text-right">
 								<form:button class='btn btn-primary'>로그인</form:button>
