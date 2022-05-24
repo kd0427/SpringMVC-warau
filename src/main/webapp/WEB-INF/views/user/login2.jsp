@@ -38,13 +38,13 @@
 								<form:input path="user_id" class="form-style"
 									placeholder="아이디" autocomplete="off"/> <i
 									class="input-icon uil uil-grin-tongue-wink"></i>
-								<form:errors path='user_id' style='color:red' />
+								<form:errors path='user_id' style='color:red; font-weight:bold' />
 							</div>
 							<div class="form-group mt-4">
 								<form:password class="form-style" path="user_pw"
 									placeholder="비밀번호" id="logpass" autocomplete="off"/> <i
 									class="input-icon uil uil-lock-alt"></i>
-								<form:errors path='user_pw' style='color:red' />
+								<form:errors path='user_pw' style='color:red; font-weight:bold' />
 							</div>
 							<form:button class='btn mt-1'>로그인</form:button>
 							<a href="${root }user/join" class="btn mt-1">회원가입</a>

@@ -69,7 +69,7 @@
 									<form:label path="user_name">
 										<i class="uil uil-user"></i>이름</form:label>
 									<form:input path="user_name" class="form-control" />
-									<form:errors path="user_name" style="color:red" />
+									<form:errors path="user_name" style='color:red; font-weight:bold' />
 								</div>
 								<div class="form-group">
 
@@ -83,31 +83,31 @@
 												onclick='checkUserIdExist()'>중복확인</button>
 										</div>
 									</div>
-									<form:errors path="user_id" style="color:red" />
+									<form:errors path="user_id" style='color:red; font-weight:bold' />
 								</div>
 								<div class="form-group">
 									<form:label path="user_pw">
 										<i class="input-icon uil uil-lock-alt"></i>비밀번호</form:label>
 									<form:password path="user_pw" class="form-control" autoComplete="on" />
-									<form:errors path="user_pw" style="color:red" />
+									<form:errors path="user_pw" style='color:red; font-weight:bold' />
 								</div>
 								<div class="form-group">
 									<form:label path="user_pw2">
 										<i class="input-icon uil uil-lock-alt"></i>비밀번호 확인</form:label>
 									<form:password path="user_pw2" class="form-control" autoComplete="on" />
-									<form:errors path="user_pw2" style="color:red" />
+									<form:errors path="user_pw2" style='color:red; font-weight:bold' />
 								</div>
 								<div class="form-group">
 									<form:label path="user_email">
 										<i class="uil uil-envelopes"></i>이메일</form:label>
 									<form:input path="user_email" class="form-control" />
-									<form:errors path="user_email" style="color:red" />
+									<form:errors path="user_email" style='color:red; font-weight:bold' />
 								</div>
 								<div class="form-group">
 									<form:label path="user_pet">
 										<i class="uil uil-heart"></i>애완동물</form:label>
 									<form:input path="user_pet" class="form-control" />
-									<form:errors path="user_pet" style="color:red" />
+									<form:errors path="user_pet" style='color:red; font-weight:bold' />
 								</div>
 
 								<div class="form-group">
