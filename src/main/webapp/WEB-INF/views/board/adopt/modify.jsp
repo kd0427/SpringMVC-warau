@@ -69,7 +69,7 @@
 							<div class="text-right">
 							
 								<form:button class="btn btn-primary">수정완료</form:button>
-								<a href="${root }board/read?adopt_idx=${adopt_idx}" class="btn btn-info">취소</a>
+								<a href="${root }board/adopt/read?adopt_idx=${adopt_idx}" class="btn btn-info">취소</a>
 								
 							</div>
 						</div>

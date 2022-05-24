@@ -36,7 +36,6 @@
 							<td><a href='${root }board/read?notice_idx=${noticeList.notice_idx }'>${noticeList.notice_title }</a></td>
 							<td class="text-center d-none d-md-table-cell">${noticeList.notice_writer }</td>
 							<td class="text-center d-none d-md-table-cell">${noticeList.notice_regdate}</td>
-
 						</tr>
 					</c:forEach>
 					</tbody>
