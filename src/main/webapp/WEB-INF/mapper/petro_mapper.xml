@@ -4,7 +4,7 @@
 						
 <mapper namespace="petro">
 
-<!-- //글목록시발 글 번호, 제목, 작성자, 작성날짜 petro_idx, petro_title, petro_writer, petro_regdate -->
+<!-- //글목록 글 번호, 제목, 작성자, 작성날짜 petro_idx, petro_title, petro_writer, petro_regdate -->
 
 	<select id="getPetroList" resultType="com.global.vo.PetroVO">
 		<![CDATA[
